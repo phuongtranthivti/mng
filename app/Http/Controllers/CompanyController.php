@@ -15,7 +15,7 @@ class CompanyController
         return view('company', ['companies' => $companies]);
     }
 
-    function postCompany(Request $request)
+    function getSearchCompany(Request $request)
     {
         $companies = Company::where('Name', 'LIKE', $request->cpn_name)->get();
         return view('company', ['companies' => $companies]);
@@ -26,7 +26,9 @@ class CompanyController
         return view('company_register');
     }
 
-    function getCpnDetail(){
-        return view('company_detail');
+    function getCpnDetail(Request $request)
+    {
+        $company = Company::find($request->Code);
+        return view('company_detail', ['company' => $company]);
     }
 }

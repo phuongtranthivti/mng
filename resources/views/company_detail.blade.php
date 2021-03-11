@@ -20,17 +20,16 @@
         {{ csrf_field() }}
         <div id="left">
             <label for="cpn"><b>Company</b></label>
-            <input id="company" type="text" placeholder="Company code" name="cpn" required>
-            <input type="text" placeholder="Please enter Company name" name="cpn_name" required> <br>
+            <label for="cpn"><b>{{$company->Name}}</b></label>
 
             <div id="image" style="float: right">
                 <h1> <a href="">DAY LA ANH</a></h1>
                 <a href=""> <button type="button" style="background-color: #2a88bd"> Upload </button></a>
             </div>
-
+            <br>
             <p>
                 <label for="address"><b>Address</b></label>
-                <input id="address" type="text" placeholder="Please enter Address" name="address" required> <br>
+                {{$company->address}} <br>
             </p>
 
 

@@ -13,13 +13,8 @@ class CreateCompanyTable extends Migration
      */
     public function up()
     {
-        Schema::create('_company', function (Blueprint $table) {
-            $table->increments('Code');
-            $table->string('Name');
-            $table->string('Email');
-            $table->string('Phone');
-            $table->string('Status');
-            $table->timestamps();
+        Schema::table('company', function (Blueprint $table) {
+            $table->string('address', 100);
         });
     }
 
@@ -30,6 +25,15 @@ class CreateCompanyTable extends Migration
      */
     public function down()
     {
+        Schema::create('_company', function (Blueprint $table) {
+            $table->increments('Code');
+            $table->string('Name');
+            $table->string('Email');
+            $table->string('Phone');
+            $table->string('Status');
+            $table->timestamps();
+        });
         Schema::dropIfExists('_company');
     }
 }
+

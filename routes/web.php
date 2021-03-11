@@ -27,10 +27,10 @@ Route::post('/signup', 'AuthController@postSignup');
 
 //Company ManagementRoute::group(['prefix'=>'/company'],function() {
     Route::get('/company', 'CompanyController@getCompany');
-    Route::post('/company', 'CompanyController@postCompany');
+    Route::get('/company', 'CompanyController@getSearchCompany');
     Route::get('/company_register', 'CompanyController@getRegister');
 
-    Route::get('/company_detail','CompanyController@getCpnDetail');
+    Route::get('/company_detail/{Code}','CompanyController@getCpnDetail');
 
 
 

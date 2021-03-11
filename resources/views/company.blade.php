@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-    <link href="css/Company/company.css" rel="stylesheet" >
+    <link href="css/Company/company.css" rel="stylesheet">
 
     <title>Company Management</title>
 </head>
@@ -16,30 +16,32 @@
         Company Management
     </div>
     <br> <br>
-    <form action="" method="post">
-        {{ csrf_field() }}
+    <form action="company" method="get">
         <label for="cpn"><b>Company</b></label>
-        <input id="company" type="text" placeholder="Company code" name="cpn" required>
-        <input type="text" placeholder="Please enter Company name" name="cpn_name" required> <br>
-
+        <input id="company" type="text" placeholder="Company code" name="cpn">
+        <input type="text" placeholder="Please enter Company name" name="cpn_name"> <br>
         <p>
             <label for="email"><b>Email</b></label>
-            <input id="email" type="email" placeholder="Please enter Email" name="email" required> <br>
+            <input id="email" type="email" placeholder="Please enter Email" name="email"> <br>
         </p>
 
         <label for="phone"><b>Phone Number</b></label>
-        <input type="text" placeholder="Please enter Phone Number" name="phone" required> <br>
+        <input type="text" placeholder="Please enter Phone Number" name="phone"> <br>
 
-    <p>
-        <label for="status"><b>Status</b></label>
-        <input id="status" type="text" placeholder="Select status" name="status" required> <br>
-    </p>
+        <p>
+            <label for="status"><b>Status</b></label>
+            <input id="status" type="text" placeholder="Select status" name="status"> <br>
+        </p>
+        <div id="body_button">
+            <a href="company_register">
+                <button type="button" name="register" style="background-color: #2ab27b"> Register</button>
+            </a>
+            <button type="submit" name="search" style="background-color: #2a88bd"> Search</button>
+            <a href="login">
+                <button type="button" name="back" style="background-color: black"> Back</button>
+            </a>
+        </div>
     </form>
-    <div id="body_button">
-        <a href="company_register"> <button type="button" name="register" style="background-color: #2ab27b"> Register </button> </a>
-        <button type="submit" name="search" style="background-color: #2a88bd"> Search </button>
-        <a href="login"> <button type="button" name="back" style="background-color: black"> Back </button> </a>
-    </div>
     <div>
         <table style="width:100%">
             <tr>
@@ -47,19 +49,24 @@
                 <th>Company Name</th>
                 <th>Email</th>
                 <th> Phone number</th>
-                <th> Status </th>
-                <th> Detail </th>
+                <th> Status</th>
+                <th> Detail</th>
             </tr>
 
             @foreach($companies as $company)
                 <tr>
-
                     <td>{{$company->Code}}</td>
                     <td>{{$company->Name}}</td>
                     <td>{{$company->Email}}</td>
                     <td>{{$company->Phone}}</td>
                     <td>{{$company->Status}}</td>
-                    <td><a href="company_detail" > <button type="button" id="detail" name="detail"style="background-color: #2a88bd"> Detail</button> </a></td>
+                    <td>
+                        <a href="company_detail/{{$company->Code}}">
+                            <button type="button" id="detail" name="detail" style="background-color: #2a88bd">
+                                Detail
+                            </button>
+                        </a>
+                    </td>
                 </tr>
             @endforeach
 
