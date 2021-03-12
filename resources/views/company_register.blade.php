@@ -32,8 +32,6 @@
                 <input id="address" type="text" placeholder="Please enter Address" name="address" required> <br>
             </p>
 
-
-
             <label for="email"><b>Email</b></label>
             <input type="email" placeholder="Please enter Email" name="email" required> <br>
 
@@ -42,8 +40,8 @@
                 <input id="phone" type="text" placeholder="Please enter Phone Number" name="phone" required> <br>
             </p>
 
-            <label for="Website"><b>Website</b></label>
-            <input type="email" placeholder="Please enter Website" name="website" required> <br>     <br>
+            <label for="website"><b>Website</b></label>
+            <input type="text" placeholder="Please enter Website" name="website" required> <br>     <br>
         <br>
 
         <div id="footer">

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-    <link href="css/Company/company_detail.css" rel="stylesheet" >
+    <link href="css/Company/company_detail.css" rel="stylesheet">
 
     <title>Company Management</title>
 </head>
@@ -16,10 +16,10 @@
         Company Management
     </div>
     <br> <br>
-    <form action="company_register" method="post">
+    <form action="company_detail" method="post">
         {{ csrf_field() }}
         <div id="left">
-            <label for="cpn"><b>Company</b></label>
+            <label for="cpn"><b>Company:</b></label>
             <label for="cpn"><b>{{$company->Name}}</b></label>
 
             <div id="image" style="float: right">
@@ -28,27 +28,27 @@
             </div>
             <br>
             <p>
-                <label for="address"><b>Address</b></label>
+                <label for="address"><b>Address:</b></label>
                 {{$company->address}} <br>
             </p>
 
-
-
-            <label for="email"><b>Email</b></label>
-            <input type="email" placeholder="Please enter Email" name="email" required> <br>
-
             <p>
-                <label for="phone"><b>Phone number</b></label>
-                <input id="phone" type="text" placeholder="Please enter Phone Number" name="phone" required> <br>
+                <label for="email"><b>Email:</b></label>
+                {{$company->Email}} <br>
+            </p>
+            <p>
+                <label for="phone"><b>Phone Number:</b></label>
+                {{$company->Phone}} <br>
             </p>
 
-            <label for="Website"><b>Website</b></label>
-            <input type="text" placeholder="Please enter Website" name="website" required> <br>     <br>
-            <br>
+{{--            <p>--}}
+{{--                <label for="address"><b>Address</b></label>--}}
+{{--                {{$company->detail}} <br>--}}
+{{--            </p>--}}
 
-            <p>
-                <label for="status"><b>Status</b></label>
-            </p>
+            <label for="status"><b>Status</b></label>
+            <label style="color: #2ab27b">{{$company->Status}} </label>
+
             <div id="footer">
                 <button type="button" name="back" style=" color: white; background-color: green" onclick="myFunction()"> Working </button>
                 <button type="button" name="back" style=" color: white; background-color: yellowgreen" onclick="myFunction()"> Pending </button>

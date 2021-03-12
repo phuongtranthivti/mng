@@ -16,22 +16,28 @@ Route::get('/', function () {
 });
 
 //Login
-Route::get('/login', 'AuthController@getLogin');
-Route::post('/login', 'AuthController@postLogin');
+    Route::get('/login', 'AuthController@getLogin');
+    Route::post('/login', 'AuthController@postLogin');
+
 
 //SignUp
-Route::get('/signup', 'AuthController@getSignup');
-Route::post('/signup', 'AuthController@postSignup');
+    Route::get('/signup', 'AuthController@getSignup');
+    Route::post('/signup', 'AuthController@postSignup');
 
 
-
-//Company ManagementRoute::group(['prefix'=>'/company'],function() {
+//Company Management Route::group(['prefix'=>'/company'],function() {
     Route::get('/company', 'CompanyController@getCompany');
     Route::get('/company', 'CompanyController@getSearchCompany');
-    Route::get('/company_register', 'CompanyController@getRegister');
 
+    //Company Detail
+    Route::get('/company_register', 'CompanyController@getRegister');
+    Route::post('/company_register','CompanyController@postCompany');
     Route::get('/company_detail/{Code}','CompanyController@getCpnDetail');
 
+
+//Profile
+    //Profile
+    Route::get('/profile','ProfileController@getProfile');
 
 
 

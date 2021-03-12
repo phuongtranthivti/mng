@@ -44,7 +44,7 @@
     </form>
     <div>
         <table style="width:100%">
-            <tr>
+            <tr style="background-color: #2a88bd">
                 <th>Code</th>
                 <th>Company Name</th>
                 <th>Email</th>
