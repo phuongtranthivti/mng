@@ -20,8 +20,10 @@ class AuthController extends Controller
             'email' => $request->email,
             'password' =>  $request->password
         ];
+        dd(password_hash("1", PASSWORD_DEFAULT));
+//        dd(password_hash("1", PASSWORD_DEFAULT));
         if (Auth::attempt($credentials)) {
-            return redirect('company');
+            redirect()->route('company');
         } else {
             return back()->withInput();
         }
