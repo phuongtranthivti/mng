@@ -16,28 +16,27 @@ Route::get('/', function () {
 });
 
 //Login
-    Route::get('/login', 'AuthController@getLogin');
-    Route::post('/login', 'AuthController@postLogin');
-
+Route::get('/login', 'AuthController@getLogin')->name('login.get');
+Route::post('/login', 'AuthController@postLogin');
 
 //SignUp
-    Route::get('/signup', 'AuthController@getSignup');
-    Route::post('/signup', 'AuthController@postSignup');
+Route::get('/signup', 'AuthController@getSignup');
+Route::post('/signup/action', 'AuthController@postSignup')->name('signup.post');
 
 
-//Company Management Route::group(['prefix'=>'/company'],function() {
-    Route::get('/company', 'CompanyController@getCompany');
-    Route::get('/company', 'CompanyController@getSearchCompany');
-
-    //Company Detail
-    Route::get('/company_register', 'CompanyController@getRegister');
-    Route::post('/company_register','CompanyController@postCompany');
-    Route::get('/company_detail/{Code}','CompanyController@getCpnDetail');
+//Home Management
+Route::get('/management','CompanyController@getCompany');
 
 
-//Profile
-    //Profile
-    Route::get('/profile','ProfileController@getProfile');
+//Company ManagementRoute::group(['prefix'=>'/company'],function() {
+Route::get('/company', 'CompanyController@getCompany');
+Route::get('/company/search', 'CompanyController@getSearchCompany')->name('search.get');
+Route::get('/company_register', 'CompanyController@getRegister')->name('company_register.get');
+
+Route::get('/company_detail/{Code}', 'CompanyController@getCpnDetail')->name('company_detail.get');
+
+//mng
+Route::get('/mng','AuthController@getHome');
 
 
 

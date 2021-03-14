@@ -20,10 +20,8 @@ class AuthController extends Controller
             'email' => $request->email,
             'password' =>  $request->password
         ];
-        dd(password_hash("1", PASSWORD_DEFAULT));
-//        dd(password_hash("1", PASSWORD_DEFAULT));
         if (Auth::attempt($credentials)) {
-            redirect()->route('company');
+            return redirect('company');
         } else {
             return back()->withInput();
         }
@@ -36,15 +34,21 @@ class AuthController extends Controller
 
     function postSignup(Request $request)
     {
+        //dd($request->all());
         $request->validate([
             'email' =>  'unique:users',
         ]);
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->password = Hash::make($request->psw);
+        $user->password = Hash::make($request->password);
         $user->save();
-        return redirect('login');
+
+        return redirect()->route('login.get');
+    }
+
+    function getHome(){
+        return view('mng');
     }
 
 }

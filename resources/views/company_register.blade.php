@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-    <link href="css/Company/company.css" rel="stylesheet" >
+    <link href={{ asset('css/company.css') }} rel="stylesheet" >
 
     <title>Company Management</title>
 </head>
@@ -18,40 +18,44 @@
     <br> <br>
     <form action="company_register" method="post">
     {{ csrf_field() }}
-        <div id="left">
-            <label for="cpn"><b>Company</b></label>
-            <input type="text" placeholder="Please enter Company name" name="cpn_name" required> <br>
+        <table style="width: 50%; float:left">
+            <tr>
+                <td>Company</td>
+                <td><input type="text" placeholder="Please enter Company name" name="cpn_name" required></td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td><input id="address" style="width: 300px" type="text" placeholder="Please enter Address" name="address" required></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><input id="address" type="email" placeholder="Please enter Email" name="email" required></td>
+            </tr>
+            <tr>
+                <td>Phone</td>
+                <td><input id="phone" type="text" placeholder="Please enter Phone Number" name="phone" required></td>
+            </tr>
+            <tr>
+                <td>Website</td>
+                <td><input type="tẽt" placeholder="Please enter Website" name="website" required></td>
+            </tr>
+        </table>
 
-            <div id="image" style="float: right">
-                <h1> <a href="">DAY LA ANH</a></h1>
-                <a href=""> <button type="button" style="background-color: #2a88bd"> Upload </button></a>
-            </div>
-
-            <p>
-                <label for="address"><b>Address</b></label>
-                <input id="address" type="text" placeholder="Please enter Address" name="address" required> <br>
-            </p>
-
-            <label for="email"><b>Email</b></label>
-            <input type="email" placeholder="Please enter Email" name="email" required> <br>
-
-            <p>
-                <label for="phone"><b>Phone number</b></label>
-                <input id="phone" type="text" placeholder="Please enter Phone Number" name="phone" required> <br>
-            </p>
-
-            <label for="website"><b>Website</b></label>
-            <input type="text" placeholder="Please enter Website" name="website" required> <br>     <br>
-        <br>
-
-        <div id="footer">
-            <button type="submit" name="register" style="background-color: #2ab27b"> Register </button>
-            <a href="company" > <button type="button" name="back" style=" color: white; background-color: #000000"> Back </button> </a>
+        <div id="image" style="width:30%;float:right;margin-bottom: 150px" >
+            <div style="height: 100px;width: 30px;display: inline-block;margin-bottom: 60px">Logo  </div>
+            <img src="img/avatar5.jpeg" style="clip-path: circle(50%);display:inline-block;height:100px;">
         </div>
 
+        <hr style="clear: both; margin-top: 300px">
+        <div id="body_button">
+            <a style="text-decoration: none" >
+                <button type="submit" name="register" style="background-color: #30c0f0"> Register</button>
+            </a >
+            <a href='company'  style="text-decoration: none; margin-left: 10px;">
+                <button type="button" name="back" style="background-color: black"> Back</button>
+            </a>
         </div>
     </form>
-
 </div>
 </body>
 </html>

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-    <link href="css/Company/company_detail.css" rel="stylesheet">
+    <link href={{ asset('css/company.css') }} rel="stylesheet" >
 
     <title>Company Management</title>
 </head>
@@ -16,46 +16,44 @@
         Company Management
     </div>
     <br> <br>
-    <form action="company_detail" method="post">
+    <form action="company_register" method="post">
         {{ csrf_field() }}
-        <div id="left">
-            <label for="cpn"><b>Company:</b></label>
-            <label for="cpn"><b>{{$company->Name}}</b></label>
+        <table style="width: 50%; float:left">
+            <tr>
+                <td>Company</td>
+                <td><input type="text" placeholder="Please enter Company name" name="cpn_name" required></td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td><input id="address" style="width: 300px" type="text" placeholder="Please enter Address" name="address" required></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><input id="address" type="email" placeholder="Please enter Email" name="email" required></td>
+            </tr>
+            <tr>
+                <td>Phone</td>
+                <td><input id="phone" type="text" placeholder="Please enter Phone Number" name="phone" required></td>
+            </tr>
+            <tr>
+                <td>Website</td>
+                <td><input type="text" placeholder="Please enter Website" name="website" required></td>
+            </tr>
+        </table>
 
-            <div id="image" style="float: right">
-                <h1> <a href="">DAY LA ANH</a></h1>
-                <a href=""> <button type="button" style="background-color: #2a88bd"> Upload </button></a>
-            </div>
-            <br>
-            <p>
-                <label for="address"><b>Address:</b></label>
-                {{$company->address}} <br>
-            </p>
+        <div id="image" style="width:30%;float:right;margin-bottom: 150px" >
+            <div style="height: 100px;width: 30px;display: inline-block;margin-bottom: 60px">Logo  </div>
+            <img src="img/avatar5.jpeg" style="clip-path: circle(50%);display:inline-block;height:100px;">
+        </div>
 
-            <p>
-                <label for="email"><b>Email:</b></label>
-                {{$company->Email}} <br>
-            </p>
-            <p>
-                <label for="phone"><b>Phone Number:</b></label>
-                {{$company->Phone}} <br>
-            </p>
-
-{{--            <p>--}}
-{{--                <label for="address"><b>Address</b></label>--}}
-{{--                {{$company->detail}} <br>--}}
-{{--            </p>--}}
-
-            <label for="status"><b>Status</b></label>
-            <label style="color: #2ab27b">{{$company->Status}} </label>
-
+        <hr style="clear: both; margin-top: 300px">
             <div id="footer">
                 <button type="button" name="back" style=" color: white; background-color: green" onclick="myFunction()"> Working </button>
                 <button type="button" name="back" style=" color: white; background-color: yellowgreen" onclick="myFunction()"> Pending </button>
                 <button type="button" name="back" style=" color: white; background-color: red" onclick="myFunction()"> Stop </button>
 
                 <button type="submit" name="register" style="background-color: #2ab27b" onclick="myFunction1()"> Update </button>
-                <a href="company" > <button type="button" name="back" style=" color: white; background-color: #000000"> Back </button> </a>
+                <a href="../company" > <button type="button" name="back" style=" color: white; background-color: #000000"> Back </button> </a>
             </div>
 
         </div>

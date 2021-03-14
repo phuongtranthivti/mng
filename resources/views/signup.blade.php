@@ -6,55 +6,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-    <link href={{ asset('css/signup.css') }} rel="stylesheet" >
+    <link href={{ asset('css/login.css') }} rel="stylesheet" >
 
     <title>Sign Up</title>
 </head>
 <body>
-<form action="signup" method="post" style="border:1px solid #ccc">
-    {{ csrf_field() }}
-    <div id="body">
-    <div id="container">
-        <div id="header">
-            MANAGEMENT
-        </div>
-        <div id="body_header">
-        <h1>Sign Up</h1>
-        <hr>
-        </div>
-
-        <div class="all">
-            <div id="left">
-                <label><b>First Name</b></label> <br>
-                <input type="text" placeholder="Please enter FirstName" name="name" required>
-            </div>
-            <div id="right">
-                <label><b>Last Name</b></label> <br>
-                <input id="error" type="text" placeholder="Please enter LastName" name="lastname" required>
-            </div>
-
-        </div>
-
-        <label for="email"><b>Email</b></label>
-        <input type="text" placeholder="Please enter Email" name="email" required>
-
-        <label for="phonenumber"><b>Phone Number</b></label>
-        <input type="text" placeholder="Please enter Phone Number" name="phonenummber" required>
-
-        <label for="password"><b>Password</b></label>
-        <input id="pass" type="password" placeholder="Please enter Password" name="password" required>
-
-        <label for="re-password"><b>Re-Password</b></label>
-        <input id="re-pass" type="password" placeholder="Re-Password" name="re-password" required>
-
-
-        <div class="clearfix">
-            <button type="submit" class="registerbtn" >Register</button>
-            <a href="login"><button type="button" class="backbtn">Back</button></a>
-        </div>
+<div class="container">
+    <div class="header">
+        <h1>MANAGEMENT</h1>
     </div>
-    </div>
-</form>
+
+    <form action="{{ route('signup.post') }}" method="post">
+        {{ csrf_field() }}
+        <div class ="main" style="margin-top: 0px">
+            <div class="signup">
+                <h2>Sign Up</h2>
+            </div>
+            <div id="login" style=" float: left">
+                <p>First Name</p>
+                <input type="text" style="width: 60%" placeholder="FirstName" name="name" required>
+                <small id="firstname" class="invalid-report">First Name is required</small>
+            </div>
+            <div id="login" style=" float: right">
+                <p>Last Name</p>
+                <input id="error" style="width: 60%" type="text" placeholder="LastName" name="lastname" required >
+                <small id="lastname" class="invalid-report">Last Name is required</small>
+            </div>
+            <div id="login" style="clear: both">
+                <p>Email</p>
+                <input type="text" placeholder="Please enter Email" name="email" required>
+                <small class="invalid-report">Email is required</small>
+            </div>
+            <div id="login">
+                <p>Phone Number</p>
+                <input type="text" placeholder="Please enter Phone Number" name="phonenummber" required >
+                <small class="invalid-report">Phone NUmber is required</small>
+            </div>
+            <div id="login">
+                <p>Password</p>
+                <input id="pass" type="password" placeholder="Please enter Password" name="password" required >
+                <small class="invalid-report">Password is required</small>
+            </div>
+            <div id="login">
+                <p>Re-Password</p>
+                <input id="re-pass" type="password" placeholder="Re-Password" name="re-password" required >
+                <small class="invalid-report">Re-Password is required</small>
+            </div>
+            <div class="btn" style="margin-right: 50px">
+                <button class="login" type="submit" style="background-color: #18C090">Register</button>
+                <a href="login"><button class="sign-up" type="button"  style="background-color: black">Back</button></a>
+            </div>
+        </div>
+    </form>
+
+</div>
 <script>
     function validateForm() {
         pass = document.getElementById('pass').value;
