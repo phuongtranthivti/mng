@@ -55,9 +55,9 @@
 
         <hr style="clear: both; margin-top: 300px">
 
-            <button type="button" name="back" style=" color: white; background-color: green" onclick="myFunction()"> Working </button>
-            <button type="button" name="back" style=" color: white; background-color: yellowgreen" onclick="myFunction()"> Pending </button>
-            <button type="button" name="back" style=" color: white; background-color: red" onclick="myFunction()"> Stop </button>
+        <button type="button" name="back" style=" color: white; background-color: green" onclick="myFunction()"> Working </button>
+        <button type="button" name="back" style=" color: white; background-color: yellowgreen" onclick="myFunction()"> Pending </button>
+        <button type="button" name="back" style=" color: white; background-color: red" onclick="myFunction()"> Stop </button>
         <div id="body_button" style="width: 200px;">
             <button type="submit" name="register" style="background-color: #2ab27b" onclick="myFunction1()"> Update </button>
             <a href="../company" > <button type="button" name="back" style=" color: white; background-color: #000000"> Back </button> </a>

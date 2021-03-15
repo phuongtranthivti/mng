@@ -16,6 +16,7 @@ class AuthController extends Controller
 
     function postLogin(Request $request)
     {
+  //      dd(password_hash("1", PASSWORD_DEFAULT));
         $credentials = [
             'email' => $request->email,
             'password' =>  $request->password
@@ -48,7 +49,7 @@ class AuthController extends Controller
     }
 
     function getHome(){
-        return view('mng');
+        return view('management');
     }
 
 }
