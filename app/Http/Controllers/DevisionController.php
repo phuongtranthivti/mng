@@ -4,8 +4,6 @@
 namespace App\Http\Controllers;
 
 
-
-use App\Company;
 use App\Devision;
 use Illuminate\Http\Request;
 

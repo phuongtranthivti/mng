@@ -1,12 +1,16 @@
 <?php
 
 
+
 namespace App;
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+
+use Illuminate\Database\Eloquent\Model;
 
 
-class Devision
+class Devision extends Model
 {
+    protected $table = 'devision';
+    protected $primaryKey = 'code';
+    public $incrementing = false;
 
 }

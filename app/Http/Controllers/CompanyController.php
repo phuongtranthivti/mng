@@ -9,15 +9,21 @@ use Illuminate\Http\Request;
 
 class CompanyController
 {
-    function getCompany()
+    function getCompany(Request $request)
     {
-        $companies = Company::all();
+        $params = $request->all();
+
+        $query = \DB::table('company');
+        if(isset($params['cpnn_name'])) {
+            $query->where('Name','LIKE',$params['cpnn_name']);
+        }
+        $companies =$query->get();
         return view('company', ['companies' => $companies]);
     }
 
     function getSearchCompany(Request $request)
     {
-        $companies = Company::where('Name', 'LIKE', $request->cpn_name)->get();
+        $companies = Company::where('Name', 'LIKE', $request->cpnn_name)->get();
         return view('company', ['companies' => $companies]);
     }
 

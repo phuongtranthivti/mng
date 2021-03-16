@@ -14,6 +14,19 @@ class CreateCompanyTable extends Migration
     public function up()
     {
 
+
+
+        Schema::create('company', function (Blueprint $table) {
+            $table->increments('Code');
+            $table->string('Name');
+            $table->string('Email');
+            $table->string('Phone');
+            $table->string('Status');
+            $table->string('address');
+            $table->string('website');
+            $table->timestamps();
+        });
+
     }
 
     /**
@@ -23,19 +36,20 @@ class CreateCompanyTable extends Migration
      */
     public function down()
     {
+        Schema::dropIfExists('company');
 
-        Schema::table('company', function (Blueprint $table) {
-            $table->string('address');
-        });
-        Schema::create('_company', function (Blueprint $table) {
+        Schema::create('company', function (Blueprint $table) {
             $table->increments('Code');
             $table->string('Name');
             $table->string('Email');
             $table->string('Phone');
             $table->string('Status');
+            $table->string('address');
+            $table->string('website');
             $table->timestamps();
         });
-        Schema::dropIfExists('_company');
+
+        Schema::dropIfExists('company');
     }
 }
 

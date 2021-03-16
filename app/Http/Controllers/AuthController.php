@@ -22,7 +22,7 @@ class AuthController extends Controller
             'password' =>  $request->password
         ];
         if (Auth::attempt($credentials)) {
-            return redirect('company');
+            return redirect('management');
         } else {
             return back()->withInput();
         }

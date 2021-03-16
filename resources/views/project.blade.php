@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Home Management</title>
+    <title>Project Management</title>
     <script src="{{asset('assets/bootstrap/js/bootstrap.min.js')}}" type="text/javascript"></script>
     <link href="{{asset('assets/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
     <link href="{{ asset('assets/css/untitled.css') }}" rel="stylesheet" type="text/css"/>
@@ -93,7 +93,88 @@
                 </ul>
 
                 <div id="phuong" class="phuong" style="width: 98%; margin-left: 0%">
-                  aaaa
+                    <div id="all">
+                        <div id="first_body">
+                            Project Management
+                        </div>
+                        <br> <br>
+                        <form action="{{route('devision_search.get')}}" method="get">
+                            <table>
+                                <tr>
+                                    <td>Company</td>
+                                    <td><input id="company" style="width: 100px" type="text" placeholder="Company code" name="cpn_code">
+                                        <input type="text" placeholder="Please enter Company name" name="cpn_name"></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Project</td>
+                                    <td><input style="width: 100px" type="text" placeholder="Project code" name="code">
+                                        <input type="text" placeholder="Please enter Project name" name="name"></td>
+                                </tr>
+                                <tr>
+                                    <td>Start Dtae</td>
+                                    <td><input id="date" type="text" placeholder="____-__-__" name="email"></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Status</td>
+                                    <td><select name="status">
+                                            <option selected disabled>Select status</option>
+                                            <option value="working">Go Live</option>
+                                            <option value="maintain">Maintain</option>
+                                            <option value="pending">Pending</option>
+                                            <option value="stop">Stop</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </table>
+                            <hr style="margin-top: 40px">
+                            <div id="body_button">
+                                <a href="#" style="text-decoration: none;    margin-left: 10px;">
+                                    <button type="button" name="register" style="background-color: #30c0f0"> Register</button>
+                                </a>
+                                <button type="submit" name="search" style="background-color: #2ab27b; margin-left: 10px;"> Search</button>
+                                <a href="management" style="text-decoration: none; margin-left: 10px;">
+                                    <button type="button" name="back" style="background-color: black"> Back</button>
+                                </a>
+                            </div>
+                        </form>
+
+                        <div>
+                            <table style="; width: 100%" class="table_1">
+                                <tr style="background-color: #30c0f0">
+                                    <th>Company Name</th>
+                                    <th>Branch Name</th>
+                                    <th>Division</th>
+                                    <th> Phone number</th>
+                                    <th> Email</th>
+                                    <th> Phone Number</th>
+                                    <th> Status</th>
+                                    <th> Detail</th>
+                                </tr>
+
+{{--                                @foreach($devisions as $devision)--}}
+{{--                                    <tr>--}}
+{{--                                        <td>{{$devision->cpn_code}}</td>--}}
+{{--                                        <td>{{$devision->br_code}}</td>--}}
+{{--                                        <td>{{$devision->code}}</td>--}}
+{{--                                        <td>{{$devision->name}}</td>--}}
+{{--                                        <td>{{$devision->email}}</td>--}}
+{{--                                        <td>{{$devision->phone}}</td>--}}
+{{--                                        <td>{{$devision->status}}</td>--}}
+{{--                                        <td style="text-align: center">--}}
+{{--                                            <a href="{{route('devision_detail.get', ['code'=>$devision->code])}}">--}}
+{{--                                                <button type="button" id="detail" name="detail" style="background-color: #30c0f0">--}}
+{{--                                                    Detail--}}
+{{--                                                </button>--}}
+{{--                                            </a>--}}
+{{--                                        </td>--}}
+{{--                                    </tr>--}}
+{{--                                @endforeach--}}
+
+                            </table>
+                        </div>
+                    </div>
                 </div>
 
             </div>
