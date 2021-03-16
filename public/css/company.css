@@ -40,7 +40,7 @@ input {
     border: 2px solid #2a88bd;
     border-radius: 6px;
     margin-left: 10px;
-    margin-top: 20px;
+
 }
 
 .table_1, .table_1 td, .table_1 th {
@@ -64,7 +64,7 @@ select{
     border: 2px solid #2a88bd;
     border-radius: 6px;
     margin-left: 10px;
-    margin-top: 20px;
+
 }
 select:required:invalid {
     color: gray;

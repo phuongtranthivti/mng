@@ -30,8 +30,7 @@
         <div id="content" style="background-color:white">
             <nav class="navbar navbar-light navbar-expand topbar bg-white static-top" style="padding:0px">
                 <div class="container-fluid">
-                    <button class="btn btn-link d-md-none rounded-circle mr-3" id="sidebarToggleTop" type="button"><i
-                                class="fas fa-bars"></i></button>
+
                     <h1 onclick="show()" id="logo" style="margin: 0px;height:70px;padding-left:7px;color:black;"
                         class="shadow animated--grow-in">Logo</h1>
                     <ul class="nav navbar-nav flex-nowrap ml-auto">

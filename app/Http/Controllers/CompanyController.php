@@ -14,10 +14,10 @@ class CompanyController
         $params = $request->all();
 
         $query = \DB::table('company');
-        if(isset($params['cpnn_name'])) {
-            $query->where('Name','LIKE',$params['cpnn_name']);
+        if (isset($params['cpnn_name'])) {
+            $query->where('Name', 'LIKE', $params['cpnn_name']);
         }
-        $companies =$query->get();
+        $companies = $query->get();
         return view('company', ['companies' => $companies]);
     }
 
@@ -32,17 +32,18 @@ class CompanyController
         return view('company_register');
     }
 
-    function postRegister(Request $request){
+    function postRegister(Request $request)
+    {
         $request->validate([
-            'email' =>  'unique:company',
+            'email' => 'unique:company',
         ]);
         $company = new Company();
         $company->Code = $request->Code;
         $company->Name = $request->cpn_name;
-        $company->address=$request->address;
+        $company->address = $request->address;
         $company->Email = $request->email;
         $company->Phone = $request->phone;
-        $company->website= $request->website;
+        $company->website = $request->website;
         $company->Status = "Stop";
         $company->save();
 
@@ -55,7 +56,19 @@ class CompanyController
         return view('company_detail', ['company' => $company]);
     }
 
-    function getHome(){
+    function postUpdate(Request $request)
+    {
+        $company = Company::find($request->cpn_code);
+        $company->address = $request->address;
+        $company->Email = $request->email;
+        $company->Phone = $request->phone;
+        $company->website = $request->website;
+        $company->save();
+        return redirect('company');
+    }
+
+    function getHome()
+    {
         return view('management');
     }
 }

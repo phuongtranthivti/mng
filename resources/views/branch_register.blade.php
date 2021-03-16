@@ -34,10 +34,9 @@
         <div id="content" style="background-color:white">
             <nav class="navbar navbar-light navbar-expand topbar bg-white static-top" style="padding:0px">
                 <div class="container-fluid">
-                    <button class="btn btn-link d-md-none rounded-circle mr-3" id="sidebarToggleTop" type="button"><i
-                                class="fas fa-bars"></i></button>
+
                     <div type="button" id="exit" style="border: none;width: 15%;height: 70px"><h1  onclick="show()" id="logo" style="margin: 0px;height:70px;padding-left:1%;color:black;"
-                                                                                                   class="shadow animated--grow-in">Logo</h1> </div>
+                                                                                                  >Logo</h1> </div>
                     <ul class="nav navbar-nav flex-nowrap ml-auto">
                         <li class="nav-item dropdown no-arrow mx-1" role="presentation">
                             <div class="nav-item dropdown no-arrow show"><a class="dropdown-toggle nav-link"

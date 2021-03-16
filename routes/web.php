@@ -36,6 +36,7 @@ Route::get('/company_register', 'CompanyController@getRegister')->name('company_
 Route::post('/company_register/action', 'CompanyController@postRegister')->name('company_register.post');
 
 Route::get('/company_detail/{Code}', 'CompanyController@getCpnDetail')->name('company_detail.get');
+Route::post('/company_detail/update', 'CompanyController@postUpdate')->name('company_detail.post');
 
 
 //Branch Management
@@ -69,3 +70,7 @@ Route::get('/project_register','ProjectController@getRegister')->name('project_r
 Route::post('/project_register','ProjectController@postRegister')->name('project_register.post');
 
 Route::get('/project_detail/{code}','ProjectController@getDetail')->name('project_detail.get');
+
+
+
+Route::post('/demo/{idStatus}','AuthController@postDemo');

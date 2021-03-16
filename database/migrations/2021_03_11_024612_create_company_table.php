@@ -14,7 +14,7 @@ class CreateCompanyTable extends Migration
     public function up()
     {
 
-
+        Schema::dropIfExists('company');
 
         Schema::create('company', function (Blueprint $table) {
             $table->increments('Code');
