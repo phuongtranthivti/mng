@@ -23,82 +23,96 @@ margin-top:0px;
 }
 
 
-#management #all {
-  width: 100% ;
-  font-size: 18px ;
+body{
+  font-family: sans-serif;
 }
-
-#first_body {
-  border-radius: 8px ;
-  background-color: #30c0f0;
-  width: 100%;
-  height: 50px;
-  font-family: Bahnschrift ;
-  font-size: 36px;
-}
+.left{
+  width:40%;
+  float:left;
+  height:100%;
+  margin-top:13%;
 
 
-#body_button {
-  height: 80px ;
-  width: 350px;
-  align-content: end;
-  float: right ;
 
 }
+body{
+  overflow:hidden;
+}
+.btn{
+  width:300px;
+  float:right;
 
-button {
-  color: white ;
-  padding: 10px 25px ;
-  text-decoration-color: #9d9d9d ;
-  border-radius: 6px ;
-  align-content: end ;
-  border: none ;
-  margin-top: 5px ;
-  margin-bottom: 5px ;
 }
+.avt{
+  position:relative;
+}
+#detail, #back{
+  width:100px;
+  height:35px;
 
-input {
-  width: 200px;
-  height: 30px;
-  border: 2px solid #2a88bd ;
-  border-radius: 6px ;
-  margin-left: 10px ;
-  margin-top: 5px ;
+  margin-right:10px;
+  border:none;
+  color:white;
+  font-size:13px;
+  font-weight: 200;
+  border-radius:10px;
 }
+#detail{
+  background-color: #0058FF;
+}
+#back{
+  background-color: #000000;
+}
+.right{
 
-.table_1, .table_1 td, .table_1 th {
-  border: 2px solid #9DB8E0 ;
-  border-collapse: collapse ;
-  clear: both ;
-  text-align: center ;
-}
-a{
-  margin-right: 10px ;
-}
+  width:40%;
+  float:right;
+  box-shadow: 5px 5px 18px #888888;
 
-table td{
-  padding-top: 5px ;
 }
+.avt img{
+  max-width:200px;
+  max-height:200px;
+  clip-path: circle(50%);
+  height: 50%;
 
-select{
-  width: 200px ;
-  height: 30px ;
-  border: 2px solid #2a88bd ;
-  border-radius: 6px ;
-  margin-left: 10px ;
-  margin-top: 5px ;
+  display: block;
+  margin:0 auto
 }
-select:required:invalid {
-  color: gray ;
+h3{
+  width: 300px ;
+  text-align: center;
+  font-size: 150%;
+  position:absolute;
+  left : 110px;
 }
-option[value=""][disabled] {
-  display: none ;
+h2{
+  background-color:#72ACFF;
+  border-radius:5px;
+  margin: 0px;
+  padding:10px;
+  box-shadow: 5px 5px 18px #888888;
 }
-option {
-  color: black ;
+td{
+  padding:5px 30px;
+  height:30px;
+  font-size:20px;
 }
-
-
+tr:first-child td{
+  padding-top:20px;
+}
+tr td:first-child{
+  font-weight:600;
+}
+table{
+  margin-bottom: 100px;
+}
+.deptrai{
+  background-color: red!important;
+}
+.phuong{
+  width:85%;
+}
 
 
 

@@ -75,3 +75,6 @@ Route::post('/project_register','ProjectController@postRegister')->name('project
 Route::get('/project_detail/{code}','ProjectController@getDetail')->name('project_detail.get');
 Route::post('/project_detail/update', 'ProjectController@postUpdate')->name('project_detail.post');
 
+
+//profile
+Route::get('/profile','AuthController@getProfile')->name('profile.get');

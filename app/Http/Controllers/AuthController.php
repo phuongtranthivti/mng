@@ -52,4 +52,7 @@ class AuthController extends Controller
         return view('management');
     }
 
+    function getProfile(){
+        return view('profile');
+    }
 }

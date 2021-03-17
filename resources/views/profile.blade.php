@@ -1,39 +1,141 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+
+<html>
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-    <!-- Bootstrap CSS -->
-    <link href="" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Project Management</title>
+    <script src="{{asset('assets/bootstrap/js/bootstrap.min.js')}}" type="text/javascript"></script>
+    <link href="{{asset('assets/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
+    <link href="{{ asset('assets/css/untitled.css') }}" rel="stylesheet" type="text/css"/>
+    <link href="{{asset('assets/bootstrap/js/fonts/fontawesome-all.min.css')}}" rel="stylesheet" type="text/css"/>
+    <link href={{ asset('css/company.css') }} rel="stylesheet">
+    <script>
+        function show() {
 
-    <title> User Profile </title>
+            var x = document.getElementById("services");
+            if (x.style.display == 'none') {
+                x.style.display = "block";
+                document.getElementById("logo").setAttribute("class", "shadow animated--grow-in");
+            } else if (x.style.display == 'block') {
+                x.style.display = "none";
+                document.getElementById("logo").removeAttribute("class");
+            }
+
+        }
+
+    </script>
 </head>
-<body>
-<div id="left">
-    <img src="img_girl.jpg" alt="Girl in a jacket">
-</div>
-<div id="right">
-    <div id=" body_header"> User Information</div>
-    <div id="body_left">
-        <p>Full name</p>
-        <p>Date of Birth</p>
-        <p>Email</p>
-        <p>Work Email</p>
-        <p>Phone Number</p>
-        <p>Address</p>
-        <p>Join Date</p>
-        <p>Branch</p>
-        <p>Division</p>
-        <p>Role</p>
-        <p>Postion</p>
-    </div>
 
-    <div id="'body_right">
-        [Day la khung noi dung]
-    </div>
-</div>
+<body id="page-top">
+<div id="wrapper" 0="">
+    <div class="d-flex flex-column" id="content-wrapper">
+        <div id="content" style="background-color:white">
+            <nav class="navbar navbar-light navbar-expand topbar bg-white static-top" style="padding:0px">
+                <div class="container-fluid">
 
+                    <div type="button" id="exit" style="border: none;width: 15%;height: 70px"><h1  onclick="show()" id="logo" style="margin: 0px;height:70px;padding-left:1%;color:black;"
+                                                                                                   class="shadow animated--grow-in">Logo</h1> </div>
+                    <ul class="nav navbar-nav flex-nowrap ml-auto">
+                        <li class="nav-item dropdown no-arrow mx-1" role="presentation">
+                            <div class="nav-item dropdown no-arrow show"><a class="dropdown-toggle nav-link"
+                                                                            data-toggle="dropdown" aria-expanded="true"
+                                                                            href="#" style="color:black">Home</a>
+
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown no-arrow mx-1" role="presentation">
+                            <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link"
+                                                                       data-toggle="dropdown" aria-expanded="false"
+                                                                       href="#" style="color:black">About</a>
+
+                            </div>
+                            <div class="shadow dropdown-list dropdown-menu dropdown-menu-right"
+                                 aria-labelledby="alertsDropdown"></div>
+                        </li>
+                        <li class="nav-item dropdown no-arrow" role="presentation">
+                            <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link"
+                                                                       data-toggle="dropdown" aria-expanded="false"
+                                ><img
+                                            class="border rounded-circle img-profile"
+                                            src="{{asset('assets/img/avatars/avatar1.jpeg')}}"></a>
+                                <div class="dropdown-menu shadow dropdown-menu-right animated--grow-in" role="menu"><a
+                                            class="dropdown-item" role="presentation" href="#"><img
+                                                src="{{asset('assets/img/avatars/Capture5.PNG')}}" style="width:23px;height:22px">&nbsp;Profile</a><a
+                                            role="presentation" class="dropdown-item"><img
+                                                src="{{asset('assets/img/avatars/Capture5.PNG')}}" style="width:23px;height:22px">&nbsp;Log
+                                        out</a></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div id="management" style="margin-left: 1%">
+                <ul class="nav nav-tabs shadow animated--grow-in" id="services"
+                    style="display: none; background-color: white;">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><img src="{{asset('assets/img/avatars/Capture5.PNG')}}"
+                                                          style="width:23px;height:22px">Home</a>
+                        <a class="nav-link" href="{{route('company.get')}}"><img src="{{asset('assets/img/avatars/Capture.PNG')}}"
+                                                                                 style="width:23px;height:22px">Company</a>
+                        <a class="nav-link" href="{{route('branch.get')}}"><img src="{{asset('assets/img/avatars/Capture2.PNG')}}"
+                                                                                style="width:23px;height:22px">Branch</a>
+                        <a class="nav-link" href="{{route('devision.get')}}"><img
+                                    src="{{asset('assets/img/avatars/Capture3.PNG')}}" style="width:23px;height:22px">Devision</a>
+                        <a class="nav-link" href="{{route('project.get')}}"><img src="{{asset('assets/img/avatars/Capture4.PNG')}}"
+                                                                                 style="width:23px;height:22px">Project</a>
+                        <a class="nav-link" href="#"><img
+                                    src="{{asset('assets/img/avatars/Capture6.PNG')}}" style="width:25px;height:25px">Human Resources</a>
+                    </li>
+                    <li class="nav-item"></li>
+                </ul>
+
+                <div id="phuong" class="phuong" style="width: 98%; margin-left: 0%">
+                    <div class ="left">
+                        <div class="avt">
+                            <img src="assets/img/avatar5.jpg" alt=""/>
+                            <h3>Tran Thi Phuong</h3>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <h2 >User Information</h2>
+                        <table>
+                            <tr><td>Full Name</td><td>Name</td></tr>
+                            <tr><td>Date of birth</td><td>dob</td></tr>
+                            <tr><td>Email</td><td>email</td></tr>
+                            <tr><td>Work Email</td><td>work mail</td></tr>
+                            <tr><td>Phone Number</td><td>phone</td></tr>
+                            <tr><td>Address</td><td>address</td></tr>
+                            <tr><td>Join Date</td><td>date</td></tr>
+                            <tr><td>Branch</td><td>branch</td></tr>
+                            <tr><td>Devision</td><td>devision</td></tr>
+                            <tr><td>Role</td><td>developer</td></tr>
+                            <tr><td>Position</td><td>frontend</td></tr>
+                        </table>
+                        <hr>
+                        <div class="btn">
+                            <button id="detail">Detail</button>
+                            <button id="back">Back</button>
+                        </div>
+                    </div></div>
+            </div>
+                </div>
+
+            </div>
+
+            <script src="assets/js/jquery.min.js"></script>
+            <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
+            <script src="assets/js/theme.js"></script>
+        </div>
+
+<script language="javascript">
+
+    document.getElementById("exit").onclick = function () {
+        document.getElementById("phuong").style.display = 'none';
+    };
+
+</script>
 </body>
 </html>
