@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Company Detail</title>
+    <title>Project Management</title>
     <script src="{{asset('assets/bootstrap/js/bootstrap.min.js')}}" type="text/javascript"></script>
     <link href="{{asset('assets/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
     <link href="{{ asset('assets/css/untitled.css') }}" rel="stylesheet" type="text/css"/>
@@ -75,69 +75,122 @@
                 <ul class="nav nav-tabs shadow animated--grow-in" id="services"
                     style="display: none; background-color: white;">
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><img src="assets/img/avatars/Capture5.PNG"
+                        <a class="nav-link" href="#"><img src="{{asset('assets/img/avatars/Capture5.PNG')}}"
                                                           style="width:23px;height:22px">Home</a>
-                        <a class="nav-link" href="{{route('company.get')}}"><img src="assets/img/avatars/Capture.PNG"
+                        <a class="nav-link" href="{{route('company.get')}}"><img src="{{asset('assets/img/avatars/Capture.PNG')}}"
                                                                                  style="width:23px;height:22px">Company</a>
-                        <a class="nav-link" href="{{route('branch.get')}}"><img src="assets/img/avatars/Capture2.PNG"
+                        <a class="nav-link" href="{{route('branch.get')}}"><img src="{{asset('assets/img/avatars/Capture2.PNG')}}"
                                                                                 style="width:23px;height:22px">Branch</a>
                         <a class="nav-link" href="{{route('devision.get')}}"><img
-                                    src="assets/img/avatars/Capture3.PNG" style="width:23px;height:22px">Devision</a>
-                        <a class="nav-link" href="{{route('project.get')}}"><img src="assets/img/avatars/Capture4.PNG"
-                                                          style="width:23px;height:22px">Project</a>
+                                    src="{{asset('assets/img/avatars/Capture3.PNG')}}" style="width:23px;height:22px">Devision</a>
+                        <a class="nav-link" href="{{route('project.get')}}"><img src="{{asset('assets/img/avatars/Capture4.PNG')}}"
+                                                                                 style="width:23px;height:22px">Project</a>
                         <a class="nav-link" href="#"><img
-                                    src="assets/img/avatars/Capture6.PNG" style="width:25px;height:25px">Human Resources</a>
+                                    src="{{asset('assets/img/avatars/Capture6.PNG')}}" style="width:25px;height:25px">Human Resources</a>
                     </li>
                     <li class="nav-item"></li>
                 </ul>
 
                 <div id="phuong" class="phuong" style="width: 98%; margin-left: 0%">
                     <div id="all">
+
                         <div id="first_body">
-                            Company Management
+                            Project Detail
                         </div>
                         <br> <br>
-                        <form action="{{ route('company_register.post') }}" method="post">
+
+                        <form action="{{route('project_register.post')}}" method="post">
                             {{ csrf_field() }}
-                            <table style="width: 50%; float:left">
+                            <table style="width: 50%">
                                 <tr>
                                     <td>Company</td>
-                                    <td><input type="text" placeholder="Please enter Company name" name="cpn_name" required></td>
+                                    <td><input type="text" style="width: 80px;color: gray" name="cpn_code" required>
+                                        <input type="text" style="color: gray" vname="cpn_name" required></td>
                                 </tr>
                                 <tr>
-                                    <td>Address</td>
-                                    <td><input id="address" style="width: 300px" type="text" placeholder="Please enter Address" name="address" required></td>
+                                    <td>Branch <span style="font-family: 'Times New Roman'"> (Optional)</span></td>
+                                    <td><input type="text" style="width: 80px;color: gray" name="br_code" required>
+                                        <input type="text" style="color: gray" name="br_name" required></td>
                                 </tr>
                                 <tr>
-                                    <td>Email</td>
-                                    <td><input id="address" type="email" placeholder="Please enter Email" name="email" required></td>
+                                    <td>Devision</td>
+                                    <td><input type="text" style="width: 80px;color: gray" name="dvs_code" required>
+                                        <input type="text" style="color: gray"  name="dvs_name" required></td>
                                 </tr>
                                 <tr>
-                                    <td>Phone</td>
-                                    <td><input id="phone" type="text" placeholder="Please enter Phone Number" name="phone" required></td>
+                                    <td>Project</td>
+                                    <td><input style="width: 300px" type="text" name="name" required></td>
                                 </tr>
                                 <tr>
-                                    <td>Website</td>
-                                    <td><input type="text" placeholder="Please enter Website" name="website" required></td>
+                                    <td>PM</td>
+                                    <td><select name="pm">
+                                            <option selected disabled >Select PM</option>
+                                            <option >Demo</option>
+                                        </select>
+                                    </td>
                                 </tr>
+                                <tr>
+                                    <td>Start Date</td>
+                                    <td><input type="text"name="start_date" required></td>
+                                </tr>
+                                <tr>
+                                    <td>Team member</td>
+                                    <td>
+                                        <table class="table_1" style="margin-left: 10px">
+                                            <tr>
+                                                <th>STT</th>
+                                                <th>Member Code</th>
+                                                <th>Member Name</th>
+                                                <th>Email</th>
+                                                <th>Phone number</th>
+                                                <th> Role </th>
+                                                <th></th>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td> <select>
+                                                        <option>Demo</option>
+                                                    </select></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td><select>
+                                                        <option selected disabled> Please select member </option>
+                                                        <option>Demo</option>
+                                                    </select></td>
+                                                <td><a href="#"><button type="button" style="background-color: #1cc88a">Add</button></a></td>
+                                            </tr>
+
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Manage tool</td>
+                                    <td><input type="text"  name="tool" required>
+
+                                </tr>
+                                <tr>
+                                    <td>Documentation</td>
+                                    <td ><input type="text"  name="documentation" required>
+
+                                </tr>
+                                <tr>
+                                    <td>Description</td>
+                                    <td><input name="description" placeholder="Please enter desription" required></td>
+                                </tr>
+
+
                             </table>
 
-                            <div id="image" style="width:30%;float:right;margin-bottom: 150px" >
-                                <div style="height: 100px;width: 30px;display: inline-block;margin-bottom: 60px">Logo  </div>
-                                <img src="img/avatar5.jpeg" style="clip-path: circle(50%);display:inline-block;height:100px;">
+                            <hr style="clear: both; margin-top: 60px">
+                            <div id="body_button" style="width: 200px;">
+                                <button type="submit" style="background-color: #2ab27b"> Register </button>
+                                <a href="{{asset('project')}}" > <button type="button" name="back" style=" color: white; background-color: #000000"> Back </button> </a>
                             </div>
 
-                            <hr style="clear: both; margin-top: 300px">
-                            <div id="body_button">
-                                <a style="text-decoration: none" >
-                                    <button type="submit" name="register" style="background-color: #30c0f0"> Register</button>
-                                </a >
-                                <a href='company'  style="text-decoration: none; margin-left: 10px;">
-                                    <button type="button" name="back" style="background-color: black"> Back</button>
-                                </a>
-                            </div>
                         </form>
                     </div>
+
                 </div>
 
             </div>

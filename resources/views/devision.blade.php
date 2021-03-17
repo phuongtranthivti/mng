@@ -75,18 +75,18 @@
                 <ul class="nav nav-tabs shadow animated--grow-in" id="services"
                     style="display: none; background-color: white;">
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><img src="assets/img/avatars/Capture5.PNG"
+                        <a class="nav-link" href="#"><img src="{{asset('assets/img/avatars/Capture5.PNG')}}"
                                                           style="width:23px;height:22px">Home</a>
-                        <a class="nav-link" href="{{route('company.get')}}"><img src="assets/img/avatars/Capture.PNG"
+                        <a class="nav-link" href="{{route('company.get')}}"><img src="{{asset('assets/img/avatars/Capture.PNG')}}"
                                                                                  style="width:23px;height:22px">Company</a>
-                        <a class="nav-link" href="{{route('branch.get')}}"><img src="assets/img/avatars/Capture2.PNG"
+                        <a class="nav-link" href="{{route('branch.get')}}"><img src="{{asset('assets/img/avatars/Capture2.PNG')}}"
                                                                                 style="width:23px;height:22px">Branch</a>
                         <a class="nav-link" href="{{route('devision.get')}}"><img
-                                    src="assets/img/avatars/Capture3.PNG" style="width:23px;height:22px">Devision</a>
-                        <a class="nav-link" href="{{route('project.get')}}"><img src="assets/img/avatars/Capture4.PNG"
+                                    src="{{asset('assets/img/avatars/Capture3.PNG')}}" style="width:23px;height:22px">Devision</a>
+                        <a class="nav-link" href="{{route('project.get')}}"><img src="{{asset('assets/img/avatars/Capture4.PNG')}}"
                                                           style="width:23px;height:22px">Project</a>
                         <a class="nav-link" href="#"><img
-                                    src="assets/img/avatars/Capture6.PNG" style="width:25px;height:25px">Human Resources</a>
+                                    src="{{asset('assets/img/avatars/Capture6.PNG')}}" style="width:25px;height:25px">Human Resources</a>
                     </li>
                     <li class="nav-item"></li>
                 </ul>
@@ -149,8 +149,8 @@
                                 <tr style="background-color: #30c0f0">
                                     <th>Company Name</th>
                                     <th>Branch Name</th>
-                                    <th>Division</th>
-                                    <th> Phone number</th>
+                                    <th>Division Code</th>
+                                    <th> Devision Name</th>
                                     <th> Email</th>
                                     <th> Phone Number</th>
                                     <th> Status</th>

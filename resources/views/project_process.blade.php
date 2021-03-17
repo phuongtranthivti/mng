@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Company Detail</title>
+    <title>Project Management</title>
     <script src="{{asset('assets/bootstrap/js/bootstrap.min.js')}}" type="text/javascript"></script>
     <link href="{{asset('assets/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
     <link href="{{ asset('assets/css/untitled.css') }}" rel="stylesheet" type="text/css"/>
@@ -57,14 +57,14 @@
                         <li class="nav-item dropdown no-arrow" role="presentation">
                             <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link"
                                                                        data-toggle="dropdown" aria-expanded="false"
-                                                                       href="file:///C:/Users/Dell/Documents/index.html#"><img
+                                ><img
                                             class="border rounded-circle img-profile"
                                             src="{{asset('assets/img/avatars/avatar1.jpeg')}}"></a>
                                 <div class="dropdown-menu shadow dropdown-menu-right animated--grow-in" role="menu"><a
                                             class="dropdown-item" role="presentation" href="#"><img
-                                                src="assets/img/avatars/Capture5.PNG" style="width:23px;height:22px">&nbsp;Profile</a><a
+                                                src="{{asset('assets/img/avatars/Capture5.PNG')}}" style="width:23px;height:22px">&nbsp;Profile</a><a
                                             role="presentation" class="dropdown-item"><img
-                                                src="assets/img/avatars/Capture5.PNG" style="width:23px;height:22px">&nbsp;Log
+                                                src="{{asset('assets/img/avatars/Capture5.PNG')}}" style="width:23px;height:22px">&nbsp;Log
                                         out</a></div>
                             </div>
                         </li>
@@ -75,68 +75,48 @@
                 <ul class="nav nav-tabs shadow animated--grow-in" id="services"
                     style="display: none; background-color: white;">
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><img src="assets/img/avatars/Capture5.PNG"
+                        <a class="nav-link" href="#"><img src="{{asset('assets/img/avatars/Capture5.PNG')}}"
                                                           style="width:23px;height:22px">Home</a>
-                        <a class="nav-link" href="{{route('company.get')}}"><img src="assets/img/avatars/Capture.PNG"
+                        <a class="nav-link" href="{{route('company.get')}}"><img src="{{asset('assets/img/avatars/Capture.PNG')}}"
                                                                                  style="width:23px;height:22px">Company</a>
-                        <a class="nav-link" href="{{route('branch.get')}}"><img src="assets/img/avatars/Capture2.PNG"
+                        <a class="nav-link" href="{{route('branch.get')}}"><img src="{{asset('assets/img/avatars/Capture2.PNG')}}"
                                                                                 style="width:23px;height:22px">Branch</a>
                         <a class="nav-link" href="{{route('devision.get')}}"><img
-                                    src="assets/img/avatars/Capture3.PNG" style="width:23px;height:22px">Devision</a>
-                        <a class="nav-link" href="{{route('project.get')}}"><img src="assets/img/avatars/Capture4.PNG"
-                                                          style="width:23px;height:22px">Project</a>
+                                    src="{{asset('assets/img/avatars/Capture3.PNG')}}" style="width:23px;height:22px">Devision</a>
+                        <a class="nav-link" href="{{route('project.get')}}"><img src="{{asset('assets/img/avatars/Capture4.PNG')}}"
+                                                                                 style="width:23px;height:22px">Project</a>
                         <a class="nav-link" href="#"><img
-                                    src="assets/img/avatars/Capture6.PNG" style="width:25px;height:25px">Human Resources</a>
+                                    src="{{asset('assets/img/avatars/Capture6.PNG')}}" style="width:25px;height:25px">Human Resources</a>
                     </li>
                     <li class="nav-item"></li>
                 </ul>
 
                 <div id="phuong" class="phuong" style="width: 98%; margin-left: 0%">
                     <div id="all">
-                        <div id="first_body">
-                            Company Management
+                        <div id="first_body" style="margin-bottom: 20px">
+                            Project Process
                         </div>
-                        <br> <br>
-                        <form action="{{ route('company_register.post') }}" method="post">
-                            {{ csrf_field() }}
-                            <table style="width: 50%; float:left">
+
+                        <div>
+                            <table style="; width: 100%" class="table_1">
                                 <tr>
-                                    <td>Company</td>
-                                    <td><input type="text" placeholder="Please enter Company name" name="cpn_name" required></td>
+                                    <th></th>
+                                    <th>Create Date</th>
+                                    <th>End Date</th>
+                                    <th>Create By</th>
+                                    <th>Status</th>
+                                    <th></th>
+                                    <th>QA Evaluete</th>
+                                    <th> Status</th>
+                                    <th> </th>
                                 </tr>
                                 <tr>
-                                    <td>Address</td>
-                                    <td><input id="address" style="width: 300px" type="text" placeholder="Please enter Address" name="address" required></td>
+                                    <td>Please Enter</td>
+                                    <td></td>
                                 </tr>
-                                <tr>
-                                    <td>Email</td>
-                                    <td><input id="address" type="email" placeholder="Please enter Email" name="email" required></td>
-                                </tr>
-                                <tr>
-                                    <td>Phone</td>
-                                    <td><input id="phone" type="text" placeholder="Please enter Phone Number" name="phone" required></td>
-                                </tr>
-                                <tr>
-                                    <td>Website</td>
-                                    <td><input type="text" placeholder="Please enter Website" name="website" required></td>
-                                </tr>
+
                             </table>
-
-                            <div id="image" style="width:30%;float:right;margin-bottom: 150px" >
-                                <div style="height: 100px;width: 30px;display: inline-block;margin-bottom: 60px">Logo  </div>
-                                <img src="img/avatar5.jpeg" style="clip-path: circle(50%);display:inline-block;height:100px;">
-                            </div>
-
-                            <hr style="clear: both; margin-top: 300px">
-                            <div id="body_button">
-                                <a style="text-decoration: none" >
-                                    <button type="submit" name="register" style="background-color: #30c0f0"> Register</button>
-                                </a >
-                                <a href='company'  style="text-decoration: none; margin-left: 10px;">
-                                    <button type="button" name="back" style="background-color: black"> Back</button>
-                                </a>
-                            </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
 

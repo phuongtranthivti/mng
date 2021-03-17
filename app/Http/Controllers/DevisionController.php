@@ -4,6 +4,8 @@
 namespace App\Http\Controllers;
 
 
+use App\Branch;
+use App\Company;
 use App\Devision;
 use Illuminate\Http\Request;
 
@@ -11,9 +13,7 @@ use Illuminate\Http\Request;
 class DevisionController
 {
     function getHome(){
-        //$branches = DB::table('branch')->get();
         $devisions = Devision::all();
-
         return view('devision', ['devisions' => $devisions]);
     }
 
@@ -28,16 +28,40 @@ class DevisionController
 
     function postRegister(Request  $request){
         $devision = new Devision();
-
-        $devision->status = "Stop";
+        $devision->code = $request->code;
+        $devision->name = $request->name;
+        $devision->cpn_code = $request->cpn_code;
+        $devision->br_code = $request->br_code;
+        $devision->address = $request->address;
+        $devision->area = $request->area;
+        $devision->email = $request->email;
+        $devision->phone = $request->phone;
+        $devision->status = "Stopped";
         $devision->save();
         return redirect()->route('devision.get');
     }
 
-    function getDetail(Request $request)
+    function getDvsDetail(Request $request)
     {
         $devision = Devision::find($request->code);
-        return view('devision_detail', ['devision' => $devision]);
+        $company = Company::find($devision->cpn_code);
+        $branch = Branch::find($devision->br_code);
+        return view('devision_detail', ['devision' => $devision, 'company'=>$company, 'branch'=>$branch]);
+    }
+
+    function  postUpdate(Request  $request){
+
+        $devision = Devision::find($request->code);
+
+        $devision->dvs_address = $request->address;
+        $devision->area = $request->area;
+        $devision->email= $request->email;
+        $devision->phone = $request->phone;
+        $devision->status = $request->status;
+
+        $devision->save();
+        return redirect()->route('devision.get');
+
     }
 
 }

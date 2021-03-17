@@ -48,6 +48,8 @@ Route::get('/branch_register','BranchController@getRegister')->name('branch_regi
 Route::post('/branch_register','BranchController@postRegister')->name('branch_register.post');
 
 Route::get('/branch_detail/{br_code}','BranchController@getBrDetail')->name('branch_detail.get');
+Route::post('/branch_detail/update', 'BranchController@postUpdate')->name('branch_detail.post');
+
 
 
 //Devision Management
@@ -59,7 +61,8 @@ Route::get('/devision/search', 'DevisionController@getSearch')->name('devision_s
 Route::get('/devision_register','DevisionController@getRegister')->name('devision_register.get');
 Route::post('/devision_register','DevisionController@postRegister')->name('devision_register.post');
 
-Route::get('/devision_detail/{code}','DevisionController@getDetail')->name('devision_detail.get');
+Route::get('/devision_detail/{code}','DevisionController@getDvsDetail')->name('devision_detail.get');
+Route::post('/devision_detail/update', 'DevisionController@postUpdate')->name('devision_detail.post');
 
 //Project Management
 
@@ -68,9 +71,7 @@ Route::get('/project/search', 'ProjectController@getSearch')->name('project_sear
 
 Route::get('/project_register','ProjectController@getRegister')->name('project_register.get');
 Route::post('/project_register','ProjectController@postRegister')->name('project_register.post');
-
+//
 Route::get('/project_detail/{code}','ProjectController@getDetail')->name('project_detail.get');
+Route::post('/project_detail/update', 'ProjectController@postUpdate')->name('project_detail.post');
 
-
-
-Route::post('/demo/{idStatus}','AuthController@postDemo');

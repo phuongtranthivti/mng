@@ -57,14 +57,14 @@
                         <li class="nav-item dropdown no-arrow" role="presentation">
                             <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link"
                                                                        data-toggle="dropdown" aria-expanded="false"
-                                                                       href="file:///C:/Users/Dell/Documents/index.html#"><img
+                                                                       ><img
                                             class="border rounded-circle img-profile"
                                             src="{{asset('assets/img/avatars/avatar1.jpeg')}}"></a>
                                 <div class="dropdown-menu shadow dropdown-menu-right animated--grow-in" role="menu"><a
                                             class="dropdown-item" role="presentation" href="#"><img
-                                                src="assets/img/avatars/Capture5.PNG" style="width:23px;height:22px">&nbsp;Profile</a><a
+                                                src="{{asset('assets/img/avatars/Capture5.PNG')}}" style="width:23px;height:22px">&nbsp;Profile</a><a
                                             role="presentation" class="dropdown-item"><img
-                                                src="assets/img/avatars/Capture5.PNG" style="width:23px;height:22px">&nbsp;Log
+                                                src="{{asset('assets/img/avatars/Capture5.PNG')}}" style="width:23px;height:22px">&nbsp;Log
                                         out</a></div>
                             </div>
                         </li>
@@ -75,18 +75,18 @@
                 <ul class="nav nav-tabs shadow animated--grow-in" id="services"
                     style="display: none; background-color: white;">
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><img src="assets/img/avatars/Capture5.PNG"
+                        <a class="nav-link" href="#"><img src="{{asset('assets/img/avatars/Capture5.PNG')}}"
                                                           style="width:23px;height:22px">Home</a>
-                        <a class="nav-link" href="{{route('company.get')}}"><img src="assets/img/avatars/Capture.PNG"
+                        <a class="nav-link" href="{{route('company.get')}}"><img src="{{asset('assets/img/avatars/Capture.PNG')}}"
                                                                                  style="width:23px;height:22px">Company</a>
-                        <a class="nav-link" href="{{route('branch.get')}}"><img src="assets/img/avatars/Capture2.PNG"
+                        <a class="nav-link" href="{{route('branch.get')}}"><img src="{{asset('assets/img/avatars/Capture2.PNG')}}"
                                                                                 style="width:23px;height:22px">Branch</a>
                         <a class="nav-link" href="{{route('devision.get')}}"><img
-                                    src="assets/img/avatars/Capture3.PNG" style="width:23px;height:22px">Devision</a>
-                        <a class="nav-link" href="{{route('project.get')}}"><img src="assets/img/avatars/Capture4.PNG"
+                                    src="{{asset('assets/img/avatars/Capture3.PNG')}}" style="width:23px;height:22px">Devision</a>
+                        <a class="nav-link" href="{{route('project.get')}}"><img src="{{asset('assets/img/avatars/Capture4.PNG')}}"
                                                           style="width:23px;height:22px">Project</a>
                         <a class="nav-link" href="#"><img
-                                    src="assets/img/avatars/Capture6.PNG" style="width:25px;height:25px">Human Resources</a>
+                                    src="{{asset('assets/img/avatars/Capture6.PNG')}}" style="width:25px;height:25px">Human Resources</a>
                     </li>
                     <li class="nav-item"></li>
                 </ul>
@@ -97,8 +97,8 @@
                             Project Management
                         </div>
                         <br> <br>
-                        <form action="{{route('devision_search.get')}}" method="get">
-                            <table>
+                        <form action="{{route('project_search.get')}}" method="get">
+                            <table style=" width: 50%; float: left">
                                 <tr>
                                     <td>Company</td>
                                     <td><input id="company" style="width: 100px" type="text" placeholder="Company code" name="cpn_code">
@@ -108,7 +108,7 @@
                                 <tr>
                                     <td>Project</td>
                                     <td><input style="width: 100px" type="text" placeholder="Project code" name="code">
-                                        <input type="text" placeholder="Please enter Project name" name="name"></td>
+                                        <input type="text" placeholder="Please enter Project name" name="pr_name"></td>
                                 </tr>
                                 <tr>
                                     <td>Start Dtae</td>
@@ -127,9 +127,30 @@
                                     </td>
                                 </tr>
                             </table>
-                            <hr style="margin-top: 40px">
+
+                            <table style=" width: 50%; float:right;margin-bottom: 120px">
+                                <tr>
+                                    <td>Branch (Option)</td>
+                                    <td><input id="company" style="width: 100px" type="text" placeholder="Branch code" name="br_code">
+                                        <input type="text" placeholder="Please enter Branch name" name="br_name"></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Devision</td>
+                                    <td><input style="width: 100px" type="text"  placeholder="Devision code" name="dvs_code">
+                                        <input type="text" placeholder="Please enter Devision name" name="dvs_name"></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Quality</td>
+                                    <td><input id="date" type="text" placeholder="Please enter Quality" name="email"></td>
+                                </tr>
+
+                            </table>
+
+                            <hr style="margin-top: 40px; clear:both;">
                             <div id="body_button">
-                                <a href="#" style="text-decoration: none;    margin-left: 10px;">
+                                <a href="{{route('project_register.get')}}" style="text-decoration: none;    margin-left: 10px;">
                                     <button type="button" name="register" style="background-color: #30c0f0"> Register</button>
                                 </a>
                                 <button type="submit" name="search" style="background-color: #2ab27b; margin-left: 10px;"> Search</button>
@@ -142,34 +163,36 @@
                         <div>
                             <table style="; width: 100%" class="table_1">
                                 <tr style="background-color: #30c0f0">
-                                    <th>Company Name</th>
-                                    <th>Branch Name</th>
-                                    <th>Division</th>
-                                    <th> Phone number</th>
-                                    <th> Email</th>
-                                    <th> Phone Number</th>
+                                    <th>Project Code</th>
+                                    <th>Project Name</th>
+                                    <th>PM</th>
+                                    <th> Team size</th>
+                                    <th> Start Date</th>
+                                    <th> Devision</th>
+                                    <th> Quality</th>
                                     <th> Status</th>
-                                    <th> Detail</th>
+                                    <th> </th>
                                 </tr>
 
-{{--                                @foreach($devisions as $devision)--}}
-{{--                                    <tr>--}}
-{{--                                        <td>{{$devision->cpn_code}}</td>--}}
-{{--                                        <td>{{$devision->br_code}}</td>--}}
-{{--                                        <td>{{$devision->code}}</td>--}}
-{{--                                        <td>{{$devision->name}}</td>--}}
-{{--                                        <td>{{$devision->email}}</td>--}}
-{{--                                        <td>{{$devision->phone}}</td>--}}
-{{--                                        <td>{{$devision->status}}</td>--}}
-{{--                                        <td style="text-align: center">--}}
-{{--                                            <a href="{{route('devision_detail.get', ['code'=>$devision->code])}}">--}}
-{{--                                                <button type="button" id="detail" name="detail" style="background-color: #30c0f0">--}}
-{{--                                                    Detail--}}
-{{--                                                </button>--}}
-{{--                                            </a>--}}
-{{--                                        </td>--}}
-{{--                                    </tr>--}}
-{{--                                @endforeach--}}
+                                @foreach($projects as $project)
+                                    <tr>
+                                        <td>{{$project->code}}</td>
+                                        <td>{{$project->name}}</td>
+                                        <td>{{$project->pm}}</td>
+                                        <td>1</td>
+                                        <td>2</td>
+                                        <td>{{$project->dvs_code}}</td>
+                                        <td>{{$project->quality}}</td>
+                                        <td>{{$project->status}}</td>
+                                        <td style="text-align: center">
+                                            <a href="{{route('project_detail.get', ['code'=>$project->code])}}">
+                                                <button type="button" id="detail" name="detail" style="background-color: #30c0f0">
+                                                    Detail
+                                                </button>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                @endforeach
 
                             </table>
                         </div>

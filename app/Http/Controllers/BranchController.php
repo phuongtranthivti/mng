@@ -4,6 +4,7 @@
 namespace App\Http\Controllers;
 
 use App\Branch;
+use App\Company;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -43,6 +44,24 @@ class BranchController
     function getBrDetail(Request $request)
     {
         $branch = Branch::find($request->br_code);
-        return view('branch_detail', ['branch' => $branch]);
+        $company = Company::find($branch->cpn_code);
+        return view('branch_detail', ['branch' => $branch , 'company'=>$company]);
+    }
+
+    function postUpdate(Request $request)
+    {
+        $branch = Branch::find($request->br_code);
+
+        $branch->br_address = $request->address;
+        $branch->br_area = $request->area;
+        $branch->br_email = $request->email;
+        $branch->br_phone = $request->phone;
+        $branch->br_website = $request->website;
+        $branch->br_status = $request->status;
+        $branch->save();
+
+        return redirect('branch');
+
+
     }
 }

@@ -17,7 +17,7 @@ class CreateBranchTable extends Migration
             $table->increments('br_code');
             $table->string('br_name');
             $table->integer('cpn_code')->unsigned();
-            $table->foreign('cpn_code')->references('Code')->on('company');;
+            $table->foreign('cpn_code')->references('Code')->on('company');
             $table->string('br_email');
             $table->string('br_address');
             $table->string('br_area');

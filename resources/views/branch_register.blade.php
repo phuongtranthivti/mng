@@ -148,6 +148,15 @@
                             </div>
                         </form>
                     </div>
+                    <script>
+
+                        function myFunction1(){
+                            if (confirm("Do you want to update these company?")) {
+                                if (alert("Update Devision Successfull!"))
+                                    window.location.href = "../public/branch";
+                            }
+                        }
+                    </script>
                 </div>
 
             </div>

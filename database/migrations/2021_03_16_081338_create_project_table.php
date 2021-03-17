@@ -25,7 +25,19 @@ class CreateProjectTable extends Migration
     {
         Schema::create('project', function (Blueprint $table) {
             $table->increments('code');
-
+            $table->string('name');
+            $table->integer('cpn_code');
+            $table->foreign('cpn_code')->references('Code')->on('company');
+            $table->integer('br_code');
+            $table->foreign('br_code')->references('br_code')->on('branch');
+            $table->integer('dvs_code');
+            $table->string ('pm');
+            $table->date('start_date');
+            $table->string('status');
+            $table->string('quality');
+            $table->string('tool');
+            $table->string('documentation');
+            $table->string('description');
             $table->timestamps();
         });
         Schema::dropIfExists('project');

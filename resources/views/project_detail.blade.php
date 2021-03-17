@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Devision Management</title>
+    <title>Project Management</title>
     <script src="{{asset('assets/bootstrap/js/bootstrap.min.js')}}" type="text/javascript"></script>
     <link href="{{asset('assets/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
     <link href="{{ asset('assets/css/untitled.css') }}" rel="stylesheet" type="text/css"/>
@@ -95,71 +95,104 @@
                     <div id="all">
 
                         <div id="first_body">
-                            Devision Detail
+                            Project Detail
                         </div>
                         <br> <br>
 
-                        <form action="{{route('devision_detail.post')}}" method="post">
+                        <form action="{{route('project_detail.post')}}" method="post">
                             {{ csrf_field() }}
-                            <table style="width: 50%; float:left">
+                            <table style="width: 50%">
                                 <tr>
                                     <td>Company</td>
-                                    <td><input type="text" style="width: 80px;color: gray" value="{{$company->Code}}" name="cpn_code" readonly>
-                                        <input type="text" style="color: gray" value="{{$company->Name}}" name="cpn_name" readonly></td>
+                                    <td><input type="text" style="width: 80px;color: gray" value="" name="cpn_code" readonly>
+                                        <input type="text" style="color: gray" value="" name="cpn_name" readonly></td>
                                 </tr>
                                 <tr>
-                                    <td>Branch</td>
-                                    <td><input type="text" style="width: 80px;color: gray" value="{{$branch->br_code}}" name="br_code" readonly>
-                                        <input type="text" style="color: gray" value="{{$branch->br_name}}" name="name" readonly></td>
+                                    <td>Branch <span style="font-family: 'Times New Roman'"> (Optional)</span></td>
+                                    <td><input type="text" style="width: 80px;color: gray" value="" name="br_code" readonly>
+                                        <input type="text" style="color: gray" value="" name="name" readonly></td>
                                 </tr>
                                 <tr>
                                     <td>Devision</td>
-                                    <td><input type="text" style="width: 80px;color: gray" value="{{$devision->code}}" name="code" readonly>
-                                        <input type="text" style="color: gray" value="{{$devision->name}}" name="name" readonly></td>
+                                    <td><input type="text" style="width: 80px;color: gray" value="" name="dvs_code" readonly>
+                                        <input type="text" style="color: gray" value="" name="dvs_name" readonly></td>
                                 </tr>
                                 <tr>
-                                    <td>Address</td>
-                                    <td><input id="address" style="width: 300px" type="text" value="{{$devision->dvs_address}}" name="address" required></td>
+                                    <td>Project</td>
+                                    <td><input style="width: 300px" type="text" value="{{$project->name}}" name="name" required></td>
                                 </tr>
                                 <tr>
-                                    <td>Area</td>
-                                    <td><input style="width: 300px" type="text" value="{{$devision->area}}" name="area" required></td>
+                                    <td>PM</td>
+                                    <td><input style="width: 300px" type="text" value="{{$project->pm}}" name="pm" required></td>
                                 </tr>
                                 <tr>
-                                    <td>Email</td>
-                                    <td><input type="email" value="{{$devision->email}}" name="email" required></td>
+                                    <td>Start Date</td>
+                                    <td><input type="email" value="" name="start_date" required></td>
                                 </tr>
                                 <tr>
-                                    <td>Phone</td>
-                                    <td><input id="phone" type="text" value="{{$devision->phone}}" name="phone" required></td>
+                                    <td>Team member</td>
+                                    <td>
+                                        <table class="table_1" style="margin-left: 10px">
+                                            <tr>
+                                                <th>STT</th>
+                                                <th>Member Code</th>
+                                                <th>Member Name</th>
+                                                <th>Email</th>
+                                                <th>Phone number</th>
+                                                <th> Role </th>
+                                                <th></th>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td> <select>
+                                                        <option>Demo</option>
+                                                    </select></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td><select>
+                                                        <option>Demo</option>
+                                                    </select></td>
+                                                <td><a href="#"><button type="button" style="background-color: #1cc88a">Add</button></a></td>
+                                            </tr>
+
+                                        </table>
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <td>Website</td>
-                                    <td><input type="text" value="{{$devision->website}}" name="website" required></td>
+                                    <td>Manage tool</td>
+                                    <td><input type="text" value="{{$project->tool}}" name="tool" required>
+                                    <a href="#" style="margin-left: 15px"><button type="button" class="goto">Go to</button> </a></td>
+                                </tr>
+                                <tr>
+                                    <td>Documentation</td>
+                                    <td ><input type="text" value="{{$project->documentation}}" name="documentation" required>
+                                        <a href="#" style="margin-left: 15px;"><button type="button" class="goto">Go to</button> </a></td>
+                                </tr>
+                                <tr>
+                                    <td>Description</td>
+                                    <td><input type="text" style="height: 100px; width: 400px" value="{{$project->description}}" De name="website" required></td>
                                 </tr>
                                 <tr>
                                     <td>Status</td>
-                                    <td><select  name="status">
-                                            <option selected disabled hidden>{{$devision->status}}</option>
-                                            <option value="working">Working</option>
+                                    <td><select name="status">
+                                            <option selected disabled hidden>{{$project->status}}</option>
+                                            <option value="working">Go Live</option>
+                                            <option value="maintain">Maintain</option>
                                             <option value="pending">Pending</option>
                                             <option value="stop">Stop</option>
                                         </select>
                                     </td>
                                 </tr>
+
                             </table>
 
-                            <div id="image" style="width:30%;float:right;margin-bottom: 150px" >
-                                <div style="height: 100px;width: 30px;display: inline-block;margin-bottom: 60px">Logo  </div>
-                                <img src="img/avatar5.jpeg" style="clip-path: circle(50%);display:inline-block;height:100px;">
-                            </div>
-
-                            <hr style="clear: both; margin-top: 300px">
+                            <hr style="clear: both; margin-top: 60px">
 
 
                             <div id="body_button" style="width: 200px;">
                                 <button type="submit" name="register" style="background-color: #2ab27b" onclick="myFunction1()"> Update </button>
-                                <a href="../branch" > <button type="button" name="back" style=" color: white; background-color: #000000"> Back </button> </a>
+                                <a href="../project" > <button type="button" name="back" style=" color: white; background-color: #000000"> Back </button> </a>
                             </div>
 
                         </form>
@@ -167,9 +200,9 @@
                     <script>
 
                         function myFunction1() {
-                            if (confirm("Do you want to update these company?")) {
-                                if (alert("Update Company Successfull!"))
-                                    window.location.href = "../public/company";
+                            if (confirm("Do you want to update these project?")) {
+                                if (alert("Update Project Successfull!"))
+                                    window.location.href = "../public/project";
                             }
 
                         }

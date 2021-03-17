@@ -80,6 +80,15 @@ option {
     margin-bottom: 0px;
     margin-top: 0px;
 }
+.goto{
+
+    background-color: #3b5998;
+    height: 35px;
+}
+
+.table_1 tr th{
+    background-color: #72ACFF;
+}
 
 
 

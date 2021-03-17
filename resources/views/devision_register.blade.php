@@ -94,7 +94,7 @@
                 <div id="phuong" class="phuong" style="width: 98%; margin-left: 0%">
                     <div id="all">
                         <div id="first_body">
-                            Branch Register
+                            Devison Register
                         </div>
                         <br> <br>
                         <form action="{{ route('branch_register.post') }}" method="post">
@@ -106,20 +106,27 @@
                                         <input type="text"  name="cpn_name" placeholder="Company name" ></td>
                                 </tr>
                                 <tr>
-                                    <td>Branch</td>
-                                    <td><input type="text" placeholder="Please enter Branch name" name="name" required></td>
+                                    <td>Branch Name</td>
+                                    <td><input type="text" style="width: 80px;color: gray" placeholder="Branch code"  name="br_code">
+                                        <input type="text"  name="br_name" placeholder="Branch name" ></td>
                                 </tr>
                                 <tr>
-                                    <td>Address</td>
-                                    <td><input id="address" style="width: 300px" type="text" placeholder="Please enter Address" name="address" required></td>
+                                    <td>Devison</td>
+                                    <td><input id="name" style="width: 300px" type="text" placeholder="Please enter Devision Name" name="name" required></td>
                                 </tr>
                                 <tr>
-                                    <td>Area</td>
-                                    <td><input id="area" style="width: 300px" type="text" placeholder="Please enter Area" name="area" required></td>
+                                    <td>Project</td>
+                                    <td><input  style="width: 300px" type="text" placeholder="Please enter roject Name" name="project" required></td>
+                                </tr>
+                                <tr>
+                                    <td>PM</td>
+                                    <td><select>
+                                            <option>Demo</option>
+                                        </select></td>
                                 </tr>
                                 <tr>
                                     <td>Email</td>
-                                    <td><input id="address" type="email" placeholder="Please enter Email" name="email" required></td>
+                                    <td><input id="email" type="email" placeholder="Please enter Email" name="email" required></td>
                                 </tr>
                                 <tr>
                                     <td>Phone</td>
@@ -148,6 +155,15 @@
                             </div>
                         </form>
                     </div>
+                    <script>
+
+                        function myFunction1(){
+                            if (confirm("Do you want to update these company?")) {
+                                if (alert("Update Devision Successfull!"))
+                                    window.location.href = "../public/devison";
+                            }
+                        }
+                    </script>
                 </div>
 
             </div>
