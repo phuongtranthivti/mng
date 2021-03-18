@@ -76,6 +76,7 @@ Route::get('/project_detail/{code}','ProjectController@getDetail')->name('projec
 Route::post('/project_detail/update', 'ProjectController@postUpdate')->name('project_detail.post');
 
 
+
 //Profile Management
 
 Route::get('/profile','ProfileController@getProcess')->name('profile.get');
