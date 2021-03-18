@@ -35,8 +35,11 @@
             <nav class="navbar navbar-light navbar-expand topbar bg-white static-top" style="padding:0px">
                 <div class="container-fluid">
 
-                    <div type="button" id="exit" style="border: none;width: 15%;height: 70px"><h1  onclick="show()" id="logo" style="margin: 0px;height:70px;padding-left:1%;color:black;"
-                                                                                                   class="shadow animated--grow-in">Logo</h1> </div>
+                    <div type="button" id="exit" style="border: none;width: 15%;height: 70px"><h1 onclick="show()"
+                                                                                                  id="logo"
+                                                                                                  style="margin: 0px;height:70px;padding-left:1%;color:black;"
+                                                                                                  class="shadow animated--grow-in">
+                            Logo</h1></div>
                     <ul class="nav navbar-nav flex-nowrap ml-auto">
                         <li class="nav-item dropdown no-arrow mx-1" role="presentation">
                             <div class="nav-item dropdown no-arrow show"><a class="dropdown-toggle nav-link"
@@ -62,9 +65,11 @@
                                             src="{{asset('assets/img/avatars/avatar1.jpeg')}}"></a>
                                 <div class="dropdown-menu shadow dropdown-menu-right animated--grow-in" role="menu">
                                     <a class="dropdown-item" role="presentation" href="{{route('profile.get')}}"><img
-                                                src="{{asset('assets/img/avatars/Capture5.PNG')}}" style="width:23px;height:22px">&nbsp;Profile</a>
+                                                src="{{asset('assets/img/avatars/Capture5.PNG')}}"
+                                                style="width:23px;height:22px">&nbsp;Profile</a>
                                     <a class="dropdown-item" role="presentation" href="{{route('login.get')}}"><img
-                                                src="{{asset('assets/img/avatars/Capture5.PNG')}}" style="width:23px;height:22px">&nbsp;Log
+                                                src="{{asset('assets/img/avatars/Capture5.PNG')}}"
+                                                style="width:23px;height:22px">&nbsp;Log
                                         out</a></div>
                             </div>
                         </li>
@@ -77,16 +82,20 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#"><img src="{{asset('assets/img/avatars/Capture5.PNG')}}"
                                                           style="width:23px;height:22px">Home</a>
-                        <a class="nav-link" href="{{route('company.get')}}"><img src="{{asset('assets/img/avatars/Capture.PNG')}}"
-                                                                                 style="width:23px;height:22px">Company</a>
-                        <a class="nav-link" href="{{route('branch.get')}}"><img src="{{asset('assets/img/avatars/Capture2.PNG')}}"
-                                                                                style="width:23px;height:22px">Branch</a>
+                        <a class="nav-link" href="{{route('company.get')}}"><img
+                                    src="{{asset('assets/img/avatars/Capture.PNG')}}"
+                                    style="width:23px;height:22px">Company</a>
+                        <a class="nav-link" href="{{route('branch.get')}}"><img
+                                    src="{{asset('assets/img/avatars/Capture2.PNG')}}"
+                                    style="width:23px;height:22px">Branch</a>
                         <a class="nav-link" href="{{route('devision.get')}}"><img
                                     src="{{asset('assets/img/avatars/Capture3.PNG')}}" style="width:23px;height:22px">Devision</a>
-                        <a class="nav-link" href="{{route('project.get')}}"><img src="{{asset('assets/img/avatars/Capture4.PNG')}}"
-                                                                                 style="width:23px;height:22px">Project</a>
+                        <a class="nav-link" href="{{route('project.get')}}"><img
+                                    src="{{asset('assets/img/avatars/Capture4.PNG')}}"
+                                    style="width:23px;height:22px">Project</a>
                         <a class="nav-link" href="#"><img
-                                    src="{{asset('assets/img/avatars/Capture6.PNG')}}" style="width:25px;height:25px">Human Resources</a>
+                                    src="{{asset('assets/img/avatars/Capture6.PNG')}}" style="width:25px;height:25px">Human
+                            Resources</a>
                     </li>
                     <li class="nav-item"></li>
                 </ul>
@@ -104,18 +113,32 @@
                             <table style="width: 50%">
                                 <tr>
                                     <td>Company</td>
-                                    <td><input type="text" style="width: 80px;color: gray" name="cpn_code" required>
-                                        <input type="text" style="color: gray" vname="cpn_name" required></td>
+                                    <td><input type="text" style="width: 80px;color: gray" name="cpn_code"
+                                               value="{{Auth::user()->profile->project->devision->branch->company->Code}}"
+                                               readonly>
+                                        <input type="text" style="color: gray" name="cpn_name"
+                                               value="{{Auth::user()->profile->project->devision->branch->company->Name}}"
+                                               readonly></td>
                                 </tr>
                                 <tr>
                                     <td>Branch <span style="font-family: 'Times New Roman'"> (Optional)</span></td>
-                                    <td><input type="text" style="width: 80px;color: gray" name="br_code" required>
-                                        <input type="text" style="color: gray" name="br_name" required></td>
+                                    <td><input type="text" style="width: 80px;color: gray" name="br_code"
+                                               value="{{Auth::user()->profile->project->devision->branch->br_code}}"
+                                               readonly>
+                                        <input type="text" style="color: gray" name="br_name"
+                                               value="{{Auth::user()->profile->project->devision->branch->br_name}}"
+                                               readonly></td>
                                 </tr>
                                 <tr>
                                     <td>Devision</td>
-                                    <td><input type="text" style="width: 80px;color: gray" name="dvs_code" required>
-                                        <input type="text" style="color: gray"  name="dvs_name" required></td>
+                                    <td>
+                                        <select name="devision" onchange="getPM(this)" required>
+                                            <option>Select Devision</option>
+                                            @foreach($devisions as $d)
+                                                <option value="{{$d->code}}">{{$d->name}}</option>
+                                            @endforeach
+                                        </select>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>Project</td>
@@ -124,14 +147,15 @@
                                 <tr>
                                     <td>PM</td>
                                     <td><select name="pm">
-                                            <option selected disabled >Select PM</option>
-                                            <option >Demo</option>
+                                            <option selected disabled>Select PM</option>
+
+                                            <option>Demo</option>
                                         </select>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Start Date</td>
-                                    <td><input type="text"name="start_date" required></td>
+                                    <td><input type="text" name="start_date" required></td>
                                 </tr>
                                 <tr>
                                     <td>Team member</td>
@@ -143,13 +167,13 @@
                                                 <th>Member Name</th>
                                                 <th>Email</th>
                                                 <th>Phone number</th>
-                                                <th> Role </th>
+                                                <th> Role</th>
                                                 <th></th>
                                             </tr>
                                             <tr>
                                                 <td></td>
                                                 <td></td>
-                                                <td> <select>
+                                                <td><select>
                                                         <option>Demo</option>
                                                     </select></td>
                                                 <td></td>
@@ -162,7 +186,10 @@
                                                         <option>QA</option>
                                                         <option>DEVELOPER</option>
                                                     </select></td>
-                                                <td><a href="#"><button type="button" style="background-color: #1cc88a">Add</button></a></td>
+                                                <td><a href="#">
+                                                        <button type="button" style="background-color: #1cc88a">Add
+                                                        </button>
+                                                    </a></td>
                                             </tr>
 
                                         </table>
@@ -170,12 +197,12 @@
                                 </tr>
                                 <tr>
                                     <td>Manage tool</td>
-                                    <td><input type="text"  name="tool" required>
+                                    <td><input type="text" name="tool" required>
 
                                 </tr>
                                 <tr>
                                     <td>Documentation</td>
-                                    <td ><input type="text"  name="documentation" required>
+                                    <td><input type="text" name="documentation" required>
 
                                 </tr>
                                 <tr>
@@ -188,8 +215,12 @@
 
                             <hr style="clear: both; margin-top: 60px">
                             <div id="body_button" style="width: 200px;">
-                                <button type="submit" style="background-color: #2ab27b"> Register </button>
-                                <a href="{{asset('project')}}" > <button type="button" name="back" style=" color: white; background-color: #000000"> Back </button> </a>
+                                <button type="submit" style="background-color: #2ab27b"> Register</button>
+                                <a href="{{asset('project')}}">
+                                    <button type="button" name="back" style=" color: white; background-color: #000000">
+                                        Back
+                                    </button>
+                                </a>
                             </div>
 
                         </form>
@@ -211,6 +242,19 @@
     document.getElementById("exit").onclick = function () {
         document.getElementById("phuong").style.display = 'none';
     };
+
+    function getPM(sel) {
+        $.ajax({
+            url: {{route('AjaxGetPM.get')}},
+            type: 'GET',
+            data: {
+                'code': sel.value,
+            },
+            success: function (data) {
+                alert(data)
+            }
+        });
+    }
 
 </script>
 </body>

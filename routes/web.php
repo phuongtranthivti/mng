@@ -71,6 +71,7 @@ Route::get('/project/search', 'ProjectController@getSearch')->name('project_sear
 
 Route::get('/project_register','ProjectController@getRegister')->name('project_register.get');
 Route::post('/project_register','ProjectController@postRegister')->name('project_register.post');
+Route::get('/ajax/get-pm','ProjectController@getAjaxGetPM')->name('AjaxGetPM.get');
 
 Route::get('/project_detail/{code}','ProjectController@getDetail')->name('project_detail.get');
 Route::post('/project_detail/update', 'ProjectController@postUpdate')->name('project_detail.post');
@@ -81,7 +82,7 @@ Route::post('/project_detail/update', 'ProjectController@postUpdate')->name('pro
 
 Route::get('/profile','ProfileController@getProcess')->name('profile.get');
 Route::get('/profile_information/','ProfileController@getInformation')->name('information.get');
-Route::post('/profile_information/','ProfileController@postInformatiion')->name('information.post');
+Route::post('/profile_information/','ProfileController@postInformation')->name('information.post');
 
 Route::get('/profile_skill','ProfileController@getSkill')->name('skill.get');
 Route::get('/profile_skill/update','ProfileController@getSkillUpdate')->name('skill_update.get');

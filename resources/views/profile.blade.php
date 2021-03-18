@@ -34,8 +34,11 @@
             <nav class="navbar navbar-light navbar-expand topbar bg-white static-top" style="padding:0px">
                 <div class="container-fluid">
 
-                    <div type="button" id="exit" style="border: none;width: 15%;height: 70px"><h1  onclick="show()" id="logo" style="margin: 0px;height:70px;padding-left:1%;color:black;"
-                                                                                                   class="shadow animated--grow-in">Logo</h1> </div>
+                    <div type="button" id="exit" style="border: none;width: 15%;height: 70px"><h1 onclick="show()"
+                                                                                                  id="logo"
+                                                                                                  style="margin: 0px;height:70px;padding-left:1%;color:black;"
+                                                                                                  class="shadow animated--grow-in">
+                            Logo</h1></div>
                     <ul class="nav navbar-nav flex-nowrap ml-auto">
                         <li class="nav-item dropdown no-arrow mx-1" role="presentation">
                             <div class="nav-item dropdown no-arrow show"><a class="dropdown-toggle nav-link"
@@ -61,9 +64,11 @@
                                             src="{{asset('assets/img/avatars/avatar1.jpeg')}}"></a>
                                 <div class="dropdown-menu shadow dropdown-menu-right animated--grow-in" role="menu">
                                     <a class="dropdown-item" role="presentation" href="{{route('profile.get')}}"><img
-                                                src="{{asset('assets/img/avatars/Capture5.PNG')}}" style="width:23px;height:22px">&nbsp;Profile</a>
+                                                src="{{asset('assets/img/avatars/Capture5.PNG')}}"
+                                                style="width:23px;height:22px">&nbsp;Profile</a>
                                     <a class="dropdown-item" role="presentation" href="{{route('login.get')}}"><img
-                                                src="{{asset('assets/img/avatars/Capture5.PNG')}}" style="width:23px;height:22px">&nbsp;Log
+                                                src="{{asset('assets/img/avatars/Capture5.PNG')}}"
+                                                style="width:23px;height:22px">&nbsp;Log
                                         out</a></div>
                             </div>
                         </li>
@@ -76,16 +81,20 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#"><img src="{{asset('assets/img/avatars/Capture5.PNG')}}"
                                                           style="width:23px;height:22px">Home</a>
-                        <a class="nav-link" href="{{route('company.get')}}"><img src="{{asset('assets/img/avatars/Capture.PNG')}}"
-                                                                                 style="width:23px;height:22px">Company</a>
-                        <a class="nav-link" href="{{route('branch.get')}}"><img src="{{asset('assets/img/avatars/Capture2.PNG')}}"
-                                                                                style="width:23px;height:22px">Branch</a>
+                        <a class="nav-link" href="{{route('company.get')}}"><img
+                                    src="{{asset('assets/img/avatars/Capture.PNG')}}"
+                                    style="width:23px;height:22px">Company</a>
+                        <a class="nav-link" href="{{route('branch.get')}}"><img
+                                    src="{{asset('assets/img/avatars/Capture2.PNG')}}"
+                                    style="width:23px;height:22px">Branch</a>
                         <a class="nav-link" href="{{route('devision.get')}}"><img
                                     src="{{asset('assets/img/avatars/Capture3.PNG')}}" style="width:23px;height:22px">Devision</a>
-                        <a class="nav-link" href="{{route('project.get')}}"><img src="{{asset('assets/img/avatars/Capture4.PNG')}}"
-                                                                                 style="width:23px;height:22px">Project</a>
+                        <a class="nav-link" href="{{route('project.get')}}"><img
+                                    src="{{asset('assets/img/avatars/Capture4.PNG')}}"
+                                    style="width:23px;height:22px">Project</a>
                         <a class="nav-link" href="#"><img
-                                    src="{{asset('assets/img/avatars/Capture6.PNG')}}" style="width:25px;height:25px">Human Resources</a>
+                                    src="{{asset('assets/img/avatars/Capture6.PNG')}}" style="width:25px;height:25px">Human
+                            Resources</a>
                     </li>
                     <li class="nav-item"></li>
                 </ul>
@@ -101,43 +110,45 @@
 
                                 <tr>
                                     <td>Full name</td>
-                                    <td class="pf_content"></td>
+                                    <td class="pf_content">{{Auth::user()->name}}</td>
                                 </tr>
                                 <tr>
                                     <td>Date of Birthday</td>
-                                    <td class="pf_content"></td>
+                                    <td class="pf_content">{{Auth::user()->profile->birthday}}</td>
                                 </tr>
                                 <tr>
                                     <td>Email</td>
-                                    <td class="pf_content"></td>
+                                    <td class="pf_content">{{Auth::user()->email}}</td>
                                 </tr>
                                 <tr>
                                     <td>Work Email</td>
-                                    <td class="pf_content"></td>
+                                    <td class="pf_content">{{Auth::user()->profile->email_work}}</td>
                                 </tr>
                                 <tr>
                                     <td>Phone Number</td>
-                                    <td class="pf.content"></td>
+                                    <td class="pf.content">{{Auth::user()->profile->phone}}</td>
                                 </tr>
                                 <tr>
                                     <td>Address</td>
-                                    <td class="pf_content"></td>
+                                    <td class="pf_content">{{Auth::user()->profile->address}}</td>
                                 </tr>
                                 <tr>
                                     <td> Join Date</td>
-                                    <td class="pf_content"></td>
+                                    <td class="pf_content">{{Auth::user()->profile->join_date}}</td>
                                 </tr>
                                 <tr>
                                     <td>Branch</td>
-                                    <td class="pf_content"></td>
+                                    <td class="pf_content">
+                                        {{Auth::user()->profile->project->devision->branch->br_name}}
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>Devision</td>
-                                    <td class="pf_content"></td>
+                                    <td class="pf_content">{{Auth::user()->profile->project->devision->name}}</td>
                                 </tr>
                                 <tr>
-                                    <td>Rote</td>
-                                    <td class="pf_content"></td>
+                                    <td>Role</td>
+                                    <td class="pf_content">{{Auth::user()->project_member->role ?? ''}}</td>
                                 </tr>
                                 <tr>
                                     <td>Position</td>
@@ -147,11 +158,12 @@
                             </table>
 
                             <hr style="clear: both; margin-top: 50px">
-                            <div id="body_button" >
-                                <a style="text-decoration: none" href="{{route('information.get')}}" >
-                                    <button type="button" name="register" style="background-color: #30c0f0"> Detail </button>
-                                </a >
-                                <a href='{{route('management.get')}}'  style="text-decoration: none; margin-left: 10px;">
+                            <div id="body_button">
+                                <a style="text-decoration: none" href="{{route('information.get')}}">
+                                    <button type="button" name="register" style="background-color: #30c0f0"> Detail
+                                    </button>
+                                </a>
+                                <a href='{{route('management.get')}}' style="text-decoration: none; margin-left: 10px;">
                                     <button type="button" name="back" style="background-color: black"> Back</button>
                                 </a>
                             </div>

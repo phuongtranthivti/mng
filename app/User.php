@@ -26,4 +26,14 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function profile()
+    {
+        return $this->hasOne('App\Profile', 'user_id', 'id');
+    }
+
+    public function project_member()
+    {
+        return $this->hasOne('App\ProjectMember', 'user_id', 'id');
+    }
 }

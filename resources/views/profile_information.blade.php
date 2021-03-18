@@ -13,7 +13,6 @@
     <link href={{ asset('css/company.css') }} rel="stylesheet">
     <script>
         function show() {
-
             var x = document.getElementById("services");
             if (x.style.display == 'none') {
                 x.style.display = "block";
@@ -22,7 +21,6 @@
                 x.style.display = "none";
                 document.getElementById("logo").removeAttribute("class");
             }
-
         }
     </script>
 </head>
@@ -34,8 +32,11 @@
             <nav class="navbar navbar-light navbar-expand topbar bg-white static-top" style="padding:0px">
                 <div class="container-fluid">
 
-                    <div type="button" id="exit" style="border: none;width: 15%;height: 70px"><h1  onclick="show()" id="logo" style="margin: 0px;height:70px;padding-left:1%;color:black;"
-                                                                                                   class="shadow animated--grow-in">Logo</h1> </div>
+                    <div type="button" id="exit" style="border: none;width: 15%;height: 70px"><h1 onclick="show()"
+                                                                                                  id="logo"
+                                                                                                  style="margin: 0px;height:70px;padding-left:1%;color:black;"
+                                                                                                  class="shadow animated--grow-in">
+                            Logo</h1></div>
                     <ul class="nav navbar-nav flex-nowrap ml-auto">
                         <li class="nav-item dropdown no-arrow mx-1" role="presentation">
                             <div class="nav-item dropdown no-arrow show"><a class="dropdown-toggle nav-link"
@@ -61,9 +62,11 @@
                                             src="{{asset('assets/img/avatars/avatar1.jpeg')}}"></a>
                                 <div class="dropdown-menu shadow dropdown-menu-right animated--grow-in" role="menu">
                                     <a class="dropdown-item" role="presentation" href="{{route('profile.get')}}"><img
-                                                src="{{asset('assets/img/avatars/Capture5.PNG')}}" style="width:23px;height:22px">&nbsp;Profile</a>
+                                                src="{{asset('assets/img/avatars/Capture5.PNG')}}"
+                                                style="width:23px;height:22px">&nbsp;Profile</a>
                                     <a class="dropdown-item" role="presentation" href="{{route('login.get')}}"><img
-                                                src="{{asset('assets/img/avatars/Capture5.PNG')}}" style="width:23px;height:22px">&nbsp;Log
+                                                src="{{asset('assets/img/avatars/Capture5.PNG')}}"
+                                                style="width:23px;height:22px">&nbsp;Log
                                         out</a></div>
                             </div>
                         </li>
@@ -76,16 +79,20 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#"><img src="{{asset('assets/img/avatars/Capture5.PNG')}}"
                                                           style="width:23px;height:22px">Home</a>
-                        <a class="nav-link" href="{{route('company.get')}}"><img src="{{asset('assets/img/avatars/Capture.PNG')}}"
-                                                                                 style="width:23px;height:22px">Company</a>
-                        <a class="nav-link" href="{{route('branch.get')}}"><img src="{{asset('assets/img/avatars/Capture2.PNG')}}"
-                                                                                style="width:23px;height:22px">Branch</a>
+                        <a class="nav-link" href="{{route('company.get')}}"><img
+                                    src="{{asset('assets/img/avatars/Capture.PNG')}}"
+                                    style="width:23px;height:22px">Company</a>
+                        <a class="nav-link" href="{{route('branch.get')}}"><img
+                                    src="{{asset('assets/img/avatars/Capture2.PNG')}}"
+                                    style="width:23px;height:22px">Branch</a>
                         <a class="nav-link" href="{{route('devision.get')}}"><img
                                     src="{{asset('assets/img/avatars/Capture3.PNG')}}" style="width:23px;height:22px">Devision</a>
-                        <a class="nav-link" href="{{route('project.get')}}"><img src="{{asset('assets/img/avatars/Capture4.PNG')}}"
-                                                                                 style="width:23px;height:22px">Project</a>
+                        <a class="nav-link" href="{{route('project.get')}}"><img
+                                    src="{{asset('assets/img/avatars/Capture4.PNG')}}"
+                                    style="width:23px;height:22px">Project</a>
                         <a class="nav-link" href="#"><img
-                                    src="{{asset('assets/img/avatars/Capture6.PNG')}}" style="width:25px;height:25px">Human Resources</a>
+                                    src="{{asset('assets/img/avatars/Capture6.PNG')}}" style="width:25px;height:25px">Human
+                            Resources</a>
                     </li>
                     <li class="nav-item"></li>
                 </ul>
@@ -96,92 +103,148 @@
                             Profile
                         </div>
                     </div>
+                    <div>
                         <div>
-                            <div >
-                                <a href="{{route('information.get')}}">
-                                    <button id="btn1" class="profile" type="button" style="background-color: #2a88bd">Information</button>
-                                </a>
-                                <a href="{{route('skill.get')}}">
-                                    <button id="btn2" class="profile" type="button" style="margin-left: 0px">Skill</button>
-                                </a>
-                                <a href="{{route('certificate.get')}}">
-                                    <button id="btn3" class="profile" type="button" style="margin-left: 0px;">Certificate</button>
-                                </a>
-                            </div>
+                            <a href="{{route('information.get')}}">
+                                <button id="btn1" class="profile" type="button" style="background-color: #2a88bd">
+                                    Information
+                                </button>
+                            </a>
+                            <a href="{{route('skill.get')}}">
+                                <button id="btn2" class="profile" type="button" style="margin-left: 0px">Skill</button>
+                            </a>
+                            <a href="{{route('certificate.get')}}">
+                                <button id="btn3" class="profile" type="button" style="margin-left: 0px;">Certificate
+                                </button>
+                            </a>
+                        </div>
 
                         <div>
-                            <form action="{{ route('branch_register.post') }}" method="post">
+                            <form action="{{ route('information.post') }}" method="post">
                                 {{ csrf_field() }}
                                 <div style="width: 60%;float: left">
-                                <table style="width: 50%; float:left">
-                                    <tr>
-                                        <td>Branch</td>
-                                        <td><input type="text" style="width: 80px;color: gray" placeholder="Branch code"  name="br_code" readonly>
-                                            <input type="text"  name="br_name" placeholder="Branch name" readonly ></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Devison</td>
-                                        <td><input type="text" style="width: 80px;color: gray"   name="user_code" readonly>
-                                            <input type="text"  name="user_name"  readonly></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Employee</td>
-                                        <td><input type="text" style="width: 80px;color: gray"   name="user_code" readonly>
-                                            <input type="text"  name="dvs_name"  readonly></td>
-                                    </tr>
-                                    <tr>
-                                        <td>PPhone number</td>
-                                        <td><input  style="width: 300px" type="text"  name="phone" required></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Email</td>
-                                        <td><input  style="width: 300px" type="text"  name="email" required></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Address</td>
-                                        <td><input id="email" type="email" placeholder="" name="address" required></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Join Date</td>
-                                        <td><input id="phone" type="text" name="join_date" required></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Experience</td>
-                                        <td><select>
-                                                <option>Demo</option>
-                                            </select></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Type of Contract</td>
-                                        <td><select>
-                                                <option>Demo</option>
-                                            </select></td>
-                                    </tr>
-                                </table>
+                                    <table style="width: 50%; float:left">
+                                        <tr>
+                                            <td>Branch</td>
+                                            <td><input type="text" style="width: 80px;color: gray"
+                                                       placeholder="Branch code" name="br_code"
+                                                       value="{{Auth::user()->profile->project->devision->branch->br_code}}"
+                                                       readonly>
+                                                <input type="text" name="br_name" placeholder="Branch name"
+                                                       value="{{Auth::user()->profile->project->devision->branch->br_name}}"
+                                                       readonly>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Devison</td>
+                                            <td><input type="text" style="width: 80px;color: gray" name="user_code"
+                                                       value="{{Auth::user()->profile->project->devision->code}}"
+                                                       readonly>
+                                                <input type="text" name="user_name"
+                                                       value="{{Auth::user()->profile->project->devision->name}}"
+                                                       readonly>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Employee</td>
+                                            <td>
+                                                <input type="text" style="width: 80px;color: gray" name="user_code"
+                                                       value="{{Auth::user()->profile->project->code}}"
+                                                       readonly>
+                                                <input type="text" name="dvs_name"
+                                                       value="{{Auth::user()->profile->project->name}}"
+                                                       readonly>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>PPhone number</td>
+                                            <td>
+                                                <input style="width: 300px" type="text" name="phone"
+                                                       value="{{Auth::user()->profile->phone}}"
+                                                       required>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Email</td>
+                                            <td>
+                                                <input style="width: 300px" type="email" name="email"
+                                                       value="{{Auth::user()->profile->email}}"
+                                                       required>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Address</td>
+                                            <td>
+                                                <input id="email" type="text" placeholder="" name="address"
+                                                       value="{{Auth::user()->profile->address}}"
+                                                       required>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Join Date</td>
+                                            <td>
+                                                <input id="phone" type="date" name="join_date"
+                                                       value="{{Auth::user()->profile->join_date}}"
+                                                       required>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Experience</td>
+                                            <td>
+                                                <select name="experience">
+                                                    <option value="Demo">Demo</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Type of Contract</td>
+                                            <td>
+                                                <select name="contract">
+                                                    <option value="Demo">Demo</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                    </table>
                                 </div>
 
                                 <div style="width: 40%;float: right">
-                                <div id="image" style="width:30%;margin-bottom: 50px" >
+                                    <div id="image" style="width:30%;margin-bottom: 50px">
 
-                                    <img src="img/avatar5.jpeg" style="clip-path: circle(50%);display:inline-block;height:100px;">
-                                    <input type="file" style="clear: both;width: 80px;height: 30px;border: 0px" value="Update" >
-                                </div>
-                                    <table style="margin-top: 20px" >
+                                        <img src="img/avatar5.jpeg"
+                                             style="clip-path: circle(50%);display:inline-block;height:100px;">
+                                    </div>
+                                    <table style="margin-top: 20px">
                                         <tr>
                                             <td>Date of Birth</td>
-                                            <td><input  style="width: 300px" type="text"  name="birthday" required></td>
+                                            <td>
+                                                <input style="width: 300px" type="date" name="birthday"
+                                                       value="{{Auth::user()->profile->birthday}}"
+                                                       required>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>Work Email</td>
-                                            <td><input  style="width: 300px" type="text"  name="work_email" required></td>
+                                            <td>
+                                                <input style="width: 300px" type="email" name="work_email"
+                                                       value="{{Auth::user()->profile->email_work}}"
+                                                       required>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>ID/Passpost No</td>
-                                            <td><input id="email" type="email" placeholder="" name="passpost" required></td>
+                                            <td>
+                                                <input id="email" type="text" placeholder="" name="passpost"
+                                                       value="{{Auth::user()->profile->passport}}"
+                                                       required>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>ID/Passport Date</td>
-                                            <td><input id="phone" type="date" name="join_date" required></td>
+                                            <td>
+                                                <input id="phone" type="date" name="date_passpost"
+                                                       value="{{Auth::user()->profile->date_passport}}"
+                                                       required>
+                                            </td>
                                         </tr>
 
                                     </table>
@@ -190,28 +253,30 @@
                                 <hr style="clear: both; margin-top: 300px">
 
                                 <div id="body_button">
-                                    <a style="text-decoration: none" >
-                                        <button type="submit" name="register" style="background-color: #30c0f0"> Register</button>
-                                    </a >
-                                    <a href='branch'  style="text-decoration: none; margin-left: 10px;">
+                                    <a style="text-decoration: none">
+                                        <button type="submit" name="register" style="background-color: #30c0f0">
+                                            Register
+                                        </button>
+                                    </a>
+                                    <a href='branch' style="text-decoration: none; margin-left: 10px;">
                                         <button type="button" name="back" style="background-color: black"> Back</button>
                                     </a>
                                 </div>
                             </form>
 
                         </div>
-                        </div>
                     </div>
                 </div>
-
             </div>
 
-            <script src="assets/js/jquery.min.js"></script>
-            <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
-            <script src="assets/js/theme.js"></script>
         </div>
+
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
+        <script src="assets/js/theme.js"></script>
     </div>
+</div>
 
 <script language="javascript">
 

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProfileTable extends Migration
+class CreateProgileTable extends Migration
 {
     /**
      * Run the migrations.
@@ -34,7 +34,6 @@ class CreateProfileTable extends Migration
             $table->string('image');
             $table->timestamps();
         });
-
     }
 
     /**
@@ -44,6 +43,6 @@ class CreateProfileTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('profile');
+        Schema::dropIfExists('progile');
     }
 }

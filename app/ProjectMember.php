@@ -1,16 +1,12 @@
 <?php
 
-
 namespace App;
-
 
 use Illuminate\Database\Eloquent\Model;
 
-class Profile extends Model
+class ProjectMember extends Model
 {
-    protected $table = 'progile';
-    protected $primaryKey = 'code';
-    public $incrementing = false;
+    protected $table = 'project_member';
 
     public function user()
     {
