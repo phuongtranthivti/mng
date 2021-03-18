@@ -23,22 +23,30 @@ and open the template in the editor.
             <div id="login">
                 <p>Email</p>
                 <input type="text" name="email" placeholder="Please enter email" value="{{ old('email') }}">
-                <small class="invalid-report">Email is required</small>
+                <small id="email" class="invalid-report">Email is required</small>
                 <br>
             </div>
             <div id="login">
                 <p>Password</p>
-                <input type="password" name="password" placeholder="Please enter Password" >
-                <small class="invalid-report">Password is required</small>
+                <input type="password" name="password" placeholder="Please enter Password"  >
+                <small id="pass" class="invalid-report">Password is required</small>
             </div>
             <div class="btn">
-                <button class="login" type="submit">Login</button>
+                <button class="login" type="submit" >Login</button>
                 <a href="signup"><button type="button" class="sign-up">Signup</button></a>
             </div>
         </div>
     </form>
 
 </div>
+{{--<script>--}}
+{{--    function  check(){--}}
+{{--        email = document.getElementById('email').value();--}}
+{{--        if (email=="")--}}
+{{--            alert("khong co mail");--}}
+{{--        return true;--}}
+{{--    }--}}
+{{--</script>--}}
 
 </body>
 </html>

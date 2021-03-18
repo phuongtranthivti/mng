@@ -60,10 +60,10 @@
                                                                        ><img
                                             class="border rounded-circle img-profile"
                                             src="{{asset('assets/img/avatars/avatar1.jpeg')}}"></a>
-                                <div class="dropdown-menu shadow dropdown-menu-right animated--grow-in" role="menu"><a
-                                            class="dropdown-item" role="presentation" href="#"><img
-                                                src="{{asset('assets/img/avatars/Capture5.PNG')}}" style="width:23px;height:22px">&nbsp;Profile</a><a
-                                            role="presentation" class="dropdown-item"><img
+                                <div class="dropdown-menu shadow dropdown-menu-right animated--grow-in" role="menu">
+                                    <a class="dropdown-item" role="presentation" href="{{route('profile.get')}}"><img
+                                                src="{{asset('assets/img/avatars/Capture5.PNG')}}" style="width:23px;height:22px">&nbsp;Profile</a>
+                                    <a class="dropdown-item" role="presentation" href="{{route('login.get')}}"><img
                                                 src="{{asset('assets/img/avatars/Capture5.PNG')}}" style="width:23px;height:22px">&nbsp;Log
                                         out</a></div>
                             </div>
@@ -101,18 +101,18 @@
                             <table style=" width: 50%; float: left">
                                 <tr>
                                     <td>Company</td>
-                                    <td><input id="company" style="width: 100px" type="text" placeholder="Company code" name="cpn_code">
-                                        <input type="text" placeholder="Please enter Company name" name="cpn_name"></td>
+                                    <td><input id="company" style="width: 100px" type="text" placeholder="Company code" name="cpn_code" disabled>
+                                        <input type="text" placeholder="Please enter Company name" name="cpn_name" disabled></td>
                                 </tr>
 
                                 <tr>
                                     <td>Project</td>
-                                    <td><input style="width: 100px" type="text" placeholder="Project code" name="code">
-                                        <input type="text" placeholder="Please enter Project name" name="pr_name"></td>
+                                    <td><input style="width: 100px" type="text" placeholder="Project code" name="code" disabled>
+                                        <input type="text" placeholder="Please enter Project name" name="name"></td>
                                 </tr>
                                 <tr>
                                     <td>Start Dtae</td>
-                                    <td><input id="date" type="text" placeholder="____-__-__" name="email"></td>
+                                    <td><input id="date" type="text" placeholder="____-__-__" name="email" disabled></td>
                                 </tr>
 
                                 <tr>
@@ -131,19 +131,19 @@
                             <table style=" width: 50%; float:right;margin-bottom: 120px">
                                 <tr>
                                     <td>Branch (Option)</td>
-                                    <td><input id="company" style="width: 100px" type="text" placeholder="Branch code" name="br_code">
-                                        <input type="text" placeholder="Please enter Branch name" name="br_name"></td>
+                                    <td><input id="company" style="width: 100px" type="text" placeholder="Branch code" name="br_code" disabled>
+                                        <input type="text" placeholder="Please enter Branch name" name="br_name" disabled></td>
                                 </tr>
 
                                 <tr>
                                     <td>Devision</td>
-                                    <td><input style="width: 100px" type="text"  placeholder="Devision code" name="dvs_code">
-                                        <input type="text" placeholder="Please enter Devision name" name="dvs_name"></td>
+                                    <td><input style="width: 100px" type="text"  placeholder="Devision code" name="dvs_code" disabled>
+                                        <input type="text" placeholder="Please enter Devision name" name="dvs_name" disabled></td>
                                 </tr>
 
                                 <tr>
                                     <td>Quality</td>
-                                    <td><input id="date" type="text" placeholder="Please enter Quality" name="email"></td>
+                                    <td><input id="date" type="text" placeholder="Please enter Quality" name="email" disabled></td>
                                 </tr>
 
                             </table>

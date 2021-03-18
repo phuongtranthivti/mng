@@ -39,6 +39,7 @@ class AuthController extends Controller
         $request->validate([
             'email' =>  'unique:users',
         ]);
+
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;

@@ -26,9 +26,9 @@ class CreateProjectTable extends Migration
         Schema::create('project', function (Blueprint $table) {
             $table->increments('code');
             $table->string('name');
-            $table->integer('cpn_code');
+            $table->integer('cpn_code')->unsigned();
             $table->foreign('cpn_code')->references('Code')->on('company');
-            $table->integer('br_code');
+            $table->integer('br_code')->unsigned();
             $table->foreign('br_code')->references('br_code')->on('branch');
             $table->integer('dvs_code');
             $table->string ('pm');

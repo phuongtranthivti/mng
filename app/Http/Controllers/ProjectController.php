@@ -17,7 +17,7 @@ class ProjectController
     }
 
     function getSearch(Request  $request){
-        $projects = Project::where('name', 'LIKE', $request->pr_name)->get();
+        $projects = Project::where('name', 'LIKE', $request->name)->get();
         return view('project', ['projects' => $projects]);
     }
 
@@ -25,7 +25,7 @@ class ProjectController
         $project = Project::find($request->code);
         $company = Company::find($project->cpn_code);
         $branch = Branch::find($project->br_code);
-        $devision = Devision::find($request->dvs_code);
+        $devision = Devision::find($project->dvs_code);
         return view('project_detail', ['project'=>$project, 'devision' => $devision, 'company'=>$company, 'branch'=>$branch]);
 
     }

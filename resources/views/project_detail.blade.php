@@ -60,11 +60,11 @@
                                                                        href="file:///C:/Users/Dell/Documents/index.html#"><img
                                             class="border rounded-circle img-profile"
                                             src="{{asset('assets/img/avatars/avatar1.jpeg')}}"></a>
-                                <div class="dropdown-menu shadow dropdown-menu-right animated--grow-in" role="menu"><a
-                                            class="dropdown-item" role="presentation" href="#"><img
-                                                src="assets/img/avatars/Capture5.PNG" style="width:23px;height:22px">&nbsp;Profile</a><a
-                                            role="presentation" class="dropdown-item"><img
-                                                src="assets/img/avatars/Capture5.PNG" style="width:23px;height:22px">&nbsp;Log
+                                <div class="dropdown-menu shadow dropdown-menu-right animated--grow-in" role="menu">
+                                    <a class="dropdown-item" role="presentation" href="{{route('profile.get')}}"><img
+                                                src="{{asset('assets/img/avatars/Capture5.PNG')}}" style="width:23px;height:22px">&nbsp;Profile</a>
+                                    <a class="dropdown-item" role="presentation" href="{{route('login.get')}}"><img
+                                                src="{{asset('assets/img/avatars/Capture5.PNG')}}" style="width:23px;height:22px">&nbsp;Log
                                         out</a></div>
                             </div>
                         </li>
@@ -104,18 +104,18 @@
                             <table style="width: 50%">
                                 <tr>
                                     <td>Company</td>
-                                    <td><input type="text" style="width: 80px;color: gray" value="" name="cpn_code" readonly>
-                                        <input type="text" style="color: gray" value="" name="cpn_name" readonly></td>
+                                    <td><input type="text" style="width: 80px;color: gray" value="{{$company->Code}}" name="cpn_code" readonly>
+                                        <input type="text" style="color: gray" value="{{$company->Name}}" name="cpn_name" readonly></td>
                                 </tr>
                                 <tr>
-                                    <td>Branch <span style="font-family: 'Times New Roman'"> (Optional)</span></td>
-                                    <td><input type="text" style="width: 80px;color: gray" value="" name="br_code" readonly>
-                                        <input type="text" style="color: gray" value="" name="name" readonly></td>
+                                    <td>Branch<div style="font-family: 'Times New Roman'"> (Optional)</div> </td>
+                                    <td><input type="text" style="width: 80px;color: gray" value="{{$branch->br_code}}" name="br_code" readonly>
+                                        <input type="text" style="color: gray" value="{{$branch->br_name}}" name="name" readonly></td>
                                 </tr>
                                 <tr>
                                     <td>Devision</td>
-                                    <td><input type="text" style="width: 80px;color: gray" value="" name="dvs_code" readonly>
-                                        <input type="text" style="color: gray" value="" name="dvs_name" readonly></td>
+                                    <td><input type="text" style="width: 80px;color: gray" value="{{$devision->code}}" name="dvs_code" readonly>
+                                        <input type="text" style="color: gray" value="{{$devision->name}}" name="dvs_name" readonly></td>
                                 </tr>
                                 <tr>
                                     <td>Project</td>
@@ -127,7 +127,7 @@
                                 </tr>
                                 <tr>
                                     <td>Start Date</td>
-                                    <td><input type="email" value="" name="start_date" required></td>
+                                    <td><input type="text" value="{{$project->start_date}}" name="start_date" required></td>
                                 </tr>
                                 <tr>
                                     <td>Team member</td>

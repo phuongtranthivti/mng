@@ -25,7 +25,7 @@ Route::post('/signup/action', 'AuthController@postSignup')->name('signup.post');
 
 
 //Home Management
-Route::get('/management','AuthController@getHome');
+Route::get('/management','AuthController@getHome')->name('management.get');
 
 
 //Company ManagementRoute::group(['prefix'=>'/company'],function() {
@@ -71,7 +71,21 @@ Route::get('/project/search', 'ProjectController@getSearch')->name('project_sear
 
 Route::get('/project_register','ProjectController@getRegister')->name('project_register.get');
 Route::post('/project_register','ProjectController@postRegister')->name('project_register.post');
-//
+
 Route::get('/project_detail/{code}','ProjectController@getDetail')->name('project_detail.get');
 Route::post('/project_detail/update', 'ProjectController@postUpdate')->name('project_detail.post');
 
+
+//Profile Management
+
+Route::get('/profile','ProfileController@getProcess')->name('profile.get');
+Route::get('/profile_information/','ProfileController@getInformation')->name('information.get');
+Route::post('/profile_information/','ProfileController@postInformatiion')->name('information.post');
+
+Route::get('/profile_skill','ProfileController@getSkill')->name('skill.get');
+Route::get('/profile_skill/update','ProfileController@getSkillUpdate')->name('skill_update.get');
+
+
+
+Route::get('/profile_certificate','ProfileController@getCertificate')->name('certificate.get');
+Route::get('/profile_certificate/update','ProfileController@getCertificateUpdate')->name('certificate_update.get');

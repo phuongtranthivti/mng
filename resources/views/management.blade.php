@@ -30,7 +30,7 @@
 
 <body id="page-top">
 <div id="wrapper" 0="">
-    <div class="d-flex flex-column" id="content-wrapper">
+    <div class="d-flex flex-column" id="content-wrapper" style="height: 500px">
         <div id="content" style="background-color:white">
             <nav class="navbar navbar-light navbar-expand topbar bg-white static-top" style="padding:0px">
                 <div class="container-fluid">
@@ -60,11 +60,11 @@
                                                                        href="file:///C:/Users/Dell/Documents/index.html#"><img
                                             class="border rounded-circle img-profile"
                                             src="{{asset('assets/img/avatars/avatar1.jpeg')}}"></a>
-                                <div class="dropdown-menu shadow dropdown-menu-right animated--grow-in" role="menu"><a
-                                            class="dropdown-item" role="presentation" href="#"><img
-                                                src="assets/img/avatars/Capture5.PNG" style="width:23px;height:22px">&nbsp;Profile</a><a
-                                            role="presentation" class="dropdown-item"><img
-                                                src="assets/img/avatars/Capture5.PNG" style="width:23px;height:22px">&nbsp;Log
+                                <div class="dropdown-menu shadow dropdown-menu-right animated--grow-in" role="menu">
+                                    <a class="dropdown-item" role="presentation" href="{{route('profile.get')}}"><img
+                                                src="{{asset('assets/img/avatars/Capture5.PNG')}}" style="width:23px;height:22px">&nbsp;Profile</a>
+                                          <a class="dropdown-item" role="presentation" href="{{route('login.get')}}"><img
+                                                src="{{asset('assets/img/avatars/Capture5.PNG')}}" style="width:23px;height:22px">&nbsp;Log
                                         out</a></div>
                             </div>
                         </li>
@@ -92,7 +92,7 @@
                 </ul>
 
                 <div id="phuong" class="phuong" style="width: 98%; margin-left: 0%">
-                  aaaa
+
                 </div>
 
             </div>

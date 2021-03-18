@@ -53,7 +53,7 @@
                 <small class="invalid-report">Re-Password is required</small>
             </div>
             <div class="btn" style="margin-right: 50px">
-                <button class="login" type="submit" style="background-color: #18C090">Register</button>
+                <button class="login" type="submit" style="background-color: #18C090" onclick="validateForm()">Register</button>
                 <a href="login"><button class="sign-up" type="button"  style="background-color: black">Back</button></a>
             </div>
         </div>

@@ -48,7 +48,7 @@ input {
     border-collapse: collapse;
     clear: both;
     text-align: center;
-    ;
+    color: black;
 }
 a{
     margin-right: 10px;
@@ -88,6 +88,12 @@ option {
 
 .table_1 tr th{
     background-color: #72ACFF;
+}
+
+.profile{
+    color: black;
+    height: 40px;
+    margin-top: 0px;
 }
 
 
