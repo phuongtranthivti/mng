@@ -44,11 +44,15 @@ class ProjectController
 
     function getAjaxGetPM(Request $request)
     {
-        $profiles = Profile::where('dvs_code', $request->code)->get();
+        $profiles = Profile::where('dvs_code', $request-> devision)->get();
         foreach ($profiles as $p) {
-            echo $p->user->name;
+            dd($p->user->name);
         }
+
     }
+
+
+
 
     function postRegister(Request $request)
     {

@@ -13,6 +13,7 @@ class CreateProjectTable extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('project');
         Schema::create('project', function (Blueprint $table) {
             $table->increments('code');
             $table->string('name');

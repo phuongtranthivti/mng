@@ -132,30 +132,29 @@
                                 <tr>
                                     <td>Devision</td>
                                     <td>
-                                        <select name="devision" onchange="getPM(this)" required>
-                                            <option>Select Devision</option>
-                                            @foreach($devisions as $d)
-                                                <option value="{{$d->code}}">{{$d->name}}</option>
-                                            @endforeach
-                                        </select>
+                                            <select name="devision" onchange="getPM(this)" required>
+                                                <option hidden>Select Devision</option>
+                                                @foreach($devisions as $d)
+                                                    <option value="{{$d->code}}">{{$d->name}}</option>
+                                                @endforeach
+                                            </select>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Project</td>
-                                    <td><input style="width: 300px" type="text" name="name" required></td>
+                                    <td><input style="width: 300px" type="text" placeholder="Please enter Project name" name="name" required></td>
                                 </tr>
                                 <tr>
                                     <td>PM</td>
-                                    <td><select name="pm">
-                                            <option selected disabled>Select PM</option>
+                                    <td><select name="pm"  >
+                                            <option hidden>Select PM</option>
 
-                                            <option>Demo</option>
                                         </select>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Start Date</td>
-                                    <td><input type="text" name="start_date" required></td>
+                                    <td><input type="text" placeholder="Please enter Start Date" name="start_date" required></td>
                                 </tr>
                                 <tr>
                                     <td>Team member</td>
@@ -197,12 +196,12 @@
                                 </tr>
                                 <tr>
                                     <td>Manage tool</td>
-                                    <td><input type="text" name="tool" required>
+                                    <td><input type="text" name="tool" placeholder="Please enter Tool" required>
 
                                 </tr>
                                 <tr>
                                     <td>Documentation</td>
-                                    <td><input type="text" name="documentation" required>
+                                    <td><input type="text" placeholder="Please enter documentation" name="documentation" required>
 
                                 </tr>
                                 <tr>
@@ -214,7 +213,7 @@
                             </table>
 
                             <hr style="clear: both; margin-top: 60px">
-                            <div id="body_button" style="width: 200px;">
+                            <div id="body_button" >
                                 <button type="submit" style="background-color: #2ab27b"> Register</button>
                                 <a href="{{asset('project')}}">
                                     <button type="button" name="back" style=" color: white; background-color: #000000">
@@ -243,6 +242,8 @@
         document.getElementById("phuong").style.display = 'none';
     };
 
+</script>
+<script>
     function getPM(sel) {
         $.ajax({
             url: {{route('AjaxGetPM.get')}},
@@ -255,6 +256,7 @@
             }
         });
     }
+
 
 </script>
 </body>

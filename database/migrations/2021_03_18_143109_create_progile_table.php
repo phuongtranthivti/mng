@@ -13,6 +13,7 @@ class CreateProgileTable extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('progile');
         Schema::create('progile', function (Blueprint $table) {
             $table->increments('code');
             $table->integer('dvs_code')->unsigned();

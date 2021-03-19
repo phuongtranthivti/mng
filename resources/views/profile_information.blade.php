@@ -126,21 +126,22 @@
                                     <table style="width: 50%; float:left">
                                         <tr>
                                             <td>Branch</td>
-                                            <td><input type="text" style="width: 80px;color: gray"
-                                                       placeholder="Branch code" name="br_code"
+                                            <td><input type="text" style="color: gray;width: 30%"
+                                                       name="br_code"
                                                        value="{{Auth::user()->profile->project->devision->branch->br_code}}"
                                                        readonly>
-                                                <input type="text" name="br_name" placeholder="Branch name"
+                                                <input type="text" name="br_name" style="width: 65%"
                                                        value="{{Auth::user()->profile->project->devision->branch->br_name}}"
                                                        readonly>
                                             </td>
                                         </tr>
+
                                         <tr>
                                             <td>Devison</td>
-                                            <td><input type="text" style="width: 80px;color: gray" name="user_code"
+                                            <td><input type="text" style="width: 30%;color: gray" name="user_code"
                                                        value="{{Auth::user()->profile->project->devision->code}}"
                                                        readonly>
-                                                <input type="text" name="user_name"
+                                                <input type="text" name="user_name" style="width: 65%"
                                                        value="{{Auth::user()->profile->project->devision->name}}"
                                                        readonly>
                                             </td>
@@ -148,10 +149,10 @@
                                         <tr>
                                             <td>Employee</td>
                                             <td>
-                                                <input type="text" style="width: 80px;color: gray" name="user_code"
+                                                <input type="text" style="width: 30%;color: gray" name="user_code"
                                                        value="{{Auth::user()->profile->project->code}}"
                                                        readonly>
-                                                <input type="text" name="dvs_name"
+                                                <input type="text" name="dvs_name" style="width: 65%"
                                                        value="{{Auth::user()->profile->project->name}}"
                                                        readonly>
                                             </td>
@@ -190,16 +191,16 @@
                                         </tr>
                                         <tr>
                                             <td>Experience</td>
-                                            <td>
-                                                <select name="experience">
+                                            <td >
+                                                <select name="experience" style="margin-left: 0px">
                                                     <option value="Demo">Demo</option>
                                                 </select>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>Type of Contract</td>
-                                            <td>
-                                                <select name="contract">
+                                            <td style="margin-left: 2px">
+                                                <select name="contract" style="margin-left: 0px">
                                                     <option value="Demo">Demo</option>
                                                 </select>
                                             </td>
@@ -258,7 +259,7 @@
                                             Register
                                         </button>
                                     </a>
-                                    <a href='branch' style="text-decoration: none; margin-left: 10px;">
+                                    <a href='{{route('profile.get')}}' style="text-decoration: none; margin-left: 10px;">
                                         <button type="button" name="back" style="background-color: black"> Back</button>
                                     </a>
                                 </div>

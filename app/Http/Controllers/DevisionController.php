@@ -18,7 +18,35 @@ class DevisionController
     }
 
     function getSearch(Request  $request){
-        $devisions = Devision::where('name', 'LIKE', $request->name)->get();
+        $condition = $request->all();
+
+        $query = \DB::table('devision');
+        foreach ($condition as $key => $value) {
+            $query = $query->Where($key, 'LIKE', $value);
+        }
+        $bindings = $query->getBindings();
+
+
+        dump($bindings);
+//        $devisions = $query->get();
+
+        dd($query->toSql());
+
+
+//        array:10 [▼
+//  "cpn" => "company_id"
+//  "cpn_name" => "company_name"
+//  "br_code" => "branch_id"
+//  "br_name" => "branch_name"
+//  "code" => "devision_id"
+//  "name" => "devision_name"
+//  "email" => "email@abc.com"
+//  "phone" => "phone_number"
+//  "status" => "pending"
+//  "search" => null
+//]
+
+
         return view('devision', ['devisions' => $devisions]);
     }
 

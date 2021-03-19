@@ -18,11 +18,14 @@ class CompanyController
             $query->where('Name', 'LIKE', $params['cpnn_name']);
         }
         $companies = $query->get();
+        dd($companies);
+
         return view('company', ['companies' => $companies]);
     }
 
     function getSearchCompany(Request $request)
     {
+
         $companies = Company::where('Name', 'LIKE', $request->cpnn_name)->get();
         return view('company', ['companies' => $companies]);
     }

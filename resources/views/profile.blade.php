@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 
+<?php
+//dd(Auth::user()->profile->address);
+//
+//?>
+
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">

@@ -73,6 +73,7 @@ Route::get('/project_register','ProjectController@getRegister')->name('project_r
 Route::post('/project_register','ProjectController@postRegister')->name('project_register.post');
 Route::get('/ajax/get-pm','ProjectController@getAjaxGetPM')->name('AjaxGetPM.get');
 
+
 Route::get('/project_detail/{code}','ProjectController@getDetail')->name('project_detail.get');
 Route::post('/project_detail/update', 'ProjectController@postUpdate')->name('project_detail.post');
 
@@ -80,7 +81,7 @@ Route::post('/project_detail/update', 'ProjectController@postUpdate')->name('pro
 
 //Profile Management
 
-Route::get('/profile','ProfileController@getProcess')->name('profile.get');
+Route::get('/profile','ProfileController@getProcess')->name('profile.get'); //->middleware('auth');
 Route::get('/profile_information/','ProfileController@getInformation')->name('information.get');
 Route::post('/profile_information/','ProfileController@postInformation')->name('information.post');
 

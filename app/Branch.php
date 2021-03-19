@@ -12,7 +12,7 @@ class Branch extends Model
 {
     protected $table = 'branch';
     protected $primaryKey = 'br_code';
-    public $incrementing = false;
+    //public $incrementing = false;
 
     public function company()
     {

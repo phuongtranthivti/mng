@@ -122,7 +122,7 @@
                         <div id="body_button" style="width: 300px;">
                             <a href="{{route('certificate_update.get')}}" ><button type="submit" name="register" style="background-color: #2ab27b" onclick="myFunction4()"> Update
                                 </button></a>
-                            <a href="../profile">
+                            <a href="{{route('profile.get')}}">
                                 <button type="button" name="back" style=" color: white; background-color: #000000"> Back</button>
                             </a>
                         </div>

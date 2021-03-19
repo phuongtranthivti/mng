@@ -13,6 +13,7 @@ class CreateProjectMemberTable extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('project_member');
         Schema::create('project_member', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('pr_code')->unsigned();

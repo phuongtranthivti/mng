@@ -16,4 +16,9 @@ class Project extends Model
     {
         return $this->belongsTo('App\Devision', 'dvs_code');
     }
+
+    public function profile()
+    {
+        return $this->belongsTo('App\Profile','user_id');
+    }
 }

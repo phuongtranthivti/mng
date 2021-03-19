@@ -7,12 +7,13 @@ use App\Branch;
 use App\Company;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class BranchController
 {
     function getHome(){
-        //$branches = DB::table('branch')->get();
-        $branches = Branch::all();
+        $branches = DB::table('branch')->paginate(5);
+        //$branches = Branch::all()->paginate(1);
 
         return view('branch', ['branches' => $branches]);
     }

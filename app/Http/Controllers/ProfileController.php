@@ -19,6 +19,7 @@ class ProfileController extends Model
 
     function getInformation()
     {
+
         return view('profile_information');
     }
 
@@ -38,7 +39,7 @@ class ProfileController extends Model
         $profile->passport = $request->passpost;
         $profile->date_passport = $request->date_passpost;
         $profile->save();
-        return redirect('profile_information');
+        return redirect('profile');
     }
 
     function getSkill(Request $request)

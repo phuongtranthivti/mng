@@ -126,12 +126,28 @@
                                     <td></td>
                                     <td><button type="button">Add</button> </td>
                                 </tr>
+                                <tr>
+                                    <td>
+                                        <select >
+                                            <option>Demo</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select >
+                                            <option>Demo</option>
+                                        </select>
+                                    </td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><button type="button">Add</button> </td>
+
+                                </tr>
                             </table>
                         </div>
                         <div id="body_button" style="width: 300px;">
                             <button type="submit" name="register" style="background-color: #2ab27b" onclick="myFunction4()"> Update
                             </button>
-                            <a href="../company">
+                            <a href="{{route('certificate.get')}}">
                                 <button type="button" name="back" style=" color: white; background-color: #000000"> Back</button>
                             </a>
                         </div>
